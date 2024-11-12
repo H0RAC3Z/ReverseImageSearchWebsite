@@ -12,7 +12,7 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	border-style: solid;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--grayish);
 	padding: 10px;
 }
 
