@@ -1,10 +1,46 @@
 :root {
 	--white: #ffffff;
 }
+body {
+	margin: 0;
+}
 
-nav {
-	border-style: none none dotted none;
-	border-style:;
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-style: solid;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+
+nav div form input[type=text] {
+	border-style: solid;
+}
+
+a {
+	text-decoration-line: none;
+	color: var(--black);
+
+}
+
+a:hover {
+	color: var(--white);
+}
+
+.search-container {
+	display: flex;
+	align-items: center;
+}
+
+#search {
+	height: 20px;
+	width: auto;
+}
+
+#searchImg {
+	height: 20px;
+	width: auto;
 }
 
 p.footer {
