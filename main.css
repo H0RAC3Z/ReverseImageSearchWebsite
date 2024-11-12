@@ -68,3 +68,22 @@ footer{
 	font-size: 96px;
 
 }
+
+.drop-zone {
+  max-width: 200px;
+  padding: 25px;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+.drop-zone--over {
+  border-color: #0056b3;
+}
+.drop-zone__prompt {
+  font-weight: bold;
+}
+.drop-zone__input {
+  display: none;
+}
+
+
