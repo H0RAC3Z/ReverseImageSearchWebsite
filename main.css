@@ -6,3 +6,21 @@ nav {
 	border-style: none none dotted none;
 	border-style:;
 }
+
+p.footer {
+	display: inline-block; 
+	margin: 40px;
+	font-size: 18px;
+}
+
+.footerdiv {
+	width: 90%;
+	text-align: center;
+	
+}
+
+footer{
+	border: 2px black solid;
+	border-radius: 10px;
+	background-color: #ededed;
+}
