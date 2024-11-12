@@ -98,4 +98,15 @@ footer {
   display: none;
 }
 
+#aboutUsBody {
+	padding: 40px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	color: var(--seasalt);
+}
 
+#gradCap {
+	height: 100px;
+	width: auto;
+}
