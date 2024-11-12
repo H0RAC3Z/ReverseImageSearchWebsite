@@ -2,30 +2,41 @@
 	--white: #ffffff;
 	--black: #000000;
 	--grayish: #ededed;
+
+	--raisin-black: rgb(39, 40, 56);
+	--flax: rgb(243, 222, 138);
+	--coral-pink: rgb(235, 148, 134);
+	--cool-gray: rgb(126, 127, 154);
+	--seasalt: rgb(249, 248, 248);
 }
 
 body {
-	
+	font-family: Times New Roman, Helvetica, sans-serif;
+	background-color: var(--raisin-black);
+	color: var(--seasalt);
+	margin: 0;
 }
 
 .navbar {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border-style: solid;
+	border: 2px var(--black) solid;
 	background-color: var(--grayish);
-	padding: 10px;
-	border-radius: 10px;
+	padding: 40px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: rgb(243, 222, 138);
 }
 
 nav div form input[type=text] {
 	border-style: solid;
 }
 
-a {
+.navbar a {
 	text-decoration-line: none;
-	color: var(--black);
-
+	color: var(--white);
+	font-size: 18px;
 }
 
 a:hover {
@@ -47,26 +58,27 @@ a:hover {
 	width: auto;
 }
 
-a.footer {
-	display: inline-block; 
-	margin: 40px;
+footer div a {
+	text-decoration-line: none;
 	font-size: 18px;
+	padding: 40px;
 }
 
-.footerdiv {
-	text-align: center;
-	
-}
-
-footer{
+footer {
+	display: flex;
+	justify-content: center;
+	padding: 40px;
 	border: 2px black solid;
-	border-radius: 10px;
-	background-color: var(--grayish);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: var(--cool-gray);
+	background-color: var(--flax);
 }
 
 .mainbodytxt {
+	margin: 40px;
 	font-size: 96px;
-
+	overflow: hidden;
 }
 
 .drop-zone {
