@@ -24,3 +24,9 @@ footer{
 	border-radius: 10px;
 	background-color: #ededed;
 }
+
+.mainbodytxt {
+	text-align: left;
+	font-size: 96px;
+
+}
