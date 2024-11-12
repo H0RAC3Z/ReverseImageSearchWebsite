@@ -3,6 +3,7 @@
 	--black: #000000;
 	--grayish: #ededed;
 }
+
 body {
 	
 }
@@ -14,6 +15,7 @@ body {
 	border-style: solid;
 	background-color: var(--grayish);
 	padding: 10px;
+	border-radius: 10px;
 }
 
 nav div form input[type=text] {
