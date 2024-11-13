@@ -78,6 +78,7 @@ footer {
 }
 
 .mainbodytxt {
+	color: var(--seasalt);
 	margin: 40px;
 	font-size: 96px;
 	overflow: hidden;
