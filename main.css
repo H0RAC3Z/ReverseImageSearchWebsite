@@ -13,11 +13,12 @@
 body {
 	font-family: Times New Roman, Helvetica, sans-serif;
 	background-color: var(--raisin-black);
-	color: var(--seasalt);
+	
 	margin: 0;
 }
 
 .navbar {
+	color: var(--raisin-black);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -35,7 +36,7 @@ nav div form input[type=text] {
 
 .navbar a {
 	text-decoration-line: none;
-	color: var(--white);
+	color: var(--raisin-black);
 	font-size: 18px;
 }
 
@@ -60,6 +61,7 @@ a:hover {
 
 footer div a {
 	text-decoration-line: none;
+	color: var(--raisin-black);
 	font-size: 18px;
 	padding: 40px;
 }
@@ -99,6 +101,7 @@ footer {
 }
 
 #aboutUsBody {
+	color: var(--seasalt);
 	padding: 40px;
 	display: flex;
 	align-items: center;
@@ -111,7 +114,7 @@ footer {
 	width: auto;
 }
 
-.aboutUsBody {
+.contactUsBody {
 	color: var(--seasalt);
 	padding: 40px;
 }
