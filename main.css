@@ -30,10 +30,6 @@ body {
 	background-color: rgb(243, 222, 138);
 }
 
-nav div form input[type=text] {
-	border-style: solid;
-}
-
 .navbar a {
 	text-decoration-line: none;
 	color: var(--raisin-black);
@@ -50,8 +46,11 @@ a:hover {
 }
 
 #search {
+	border-style: solid;
+	border-radius: 10px;
 	height: 20px;
 	width: auto;
+	padding: 10px;
 }
 
 #searchImg {
