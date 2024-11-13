@@ -110,3 +110,14 @@ footer {
 	height: 100px;
 	width: auto;
 }
+
+.aboutUsBody {
+	color: var(--seasalt);
+	padding: 40px;
+}
+
+
+.termsBody {
+	color: var(--seasalt);
+	padding: 40px;
+}
