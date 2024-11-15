@@ -52,6 +52,11 @@ app.get('/tools/:sku', async (req, res) => {
   }
 });
 
+// Serve the JavaScript file
+app.get('/script.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'script.js'));
+});
+
 // Serve the CSS file directly
 app.get('/main.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.css'));
