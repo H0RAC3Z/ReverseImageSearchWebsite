@@ -58,39 +58,40 @@ function updateThumbnail(dropZoneElement, file) {
   }
 }
 // Below contains the javascript to get an sku from data.js
-// Base URL of your server
-const baseUrl = 'http://localhost:3000';
+document.addEventListener('DOMContentLoaded', () => {
+  const baseUrl = 'http://localhost:3000';
+  
+  const fetchToolButton = document.getElementById('fetch-tool');
+  const skuInput = document.getElementById('sku');
+  const outputDiv = document.getElementById('output');
 
-// Select HTML elements
-const fetchToolButton = document.getElementById('fetch-tool');
-const skuInput = document.getElementById('sku');
-const outputDiv = document.getElementById('output');
 
-// Fetch a tool by SKU
-fetchToolButton.addEventListener('click', async () => {
-  const sku = skuInput.value.trim();
-  if (!sku) {
-    displayOutput('Please enter an SKU');
-    return;
-  }
-
-  try {
-    const response = await fetch(`${baseUrl}/tools/${sku}`);
-    if (response.status === 404) {
-      displayOutput('Tool not found');
+  // Fetch a tool by SKU
+  fetchToolButton.addEventListener('click', async () => {
+    const sku = skuInput.value.trim();
+    if (!sku) {
+      displayOutput('Please enter an SKU');
       return;
     }
 
-    const tool = await response.json();
-    displayOutput(tool);
-  } catch (err) {
-    displayOutput('Error fetching tool');
-    console.error(err);
+    try {
+      const response = await fetch(`${baseUrl}/tools/${sku}`);
+      if (response.status === 404) {
+        displayOutput('Tool not found');
+        return;
+      }
+
+      const tool = await response.json();
+      displayOutput(tool);
+    } catch (err) {
+      displayOutput('Error fetching tool');
+      console.error(err);
+    }
+  });
+
+  function displayOutput(data) {
+    outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
   }
 });
 
-// Utility to display output in the browser
-function displayOutput(data) {
-  outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-}
 
