@@ -52,9 +52,11 @@ app.get('/tools/:sku', async (req, res) => {
   }
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Serve the HTML file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html')); // Replace 'index.html' with the name of your HTML file
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start the Express server
