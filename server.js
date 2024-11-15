@@ -52,6 +52,8 @@ app.get('/tools/:sku', async (req, res) => {
   }
 });
 
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
 // Serve the JavaScript file
 app.get('/script.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'script.js'));
