@@ -52,7 +52,10 @@ app.get('/tools/:sku', async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve the CSS file directly
+app.get('/main.css', (req, res) => {
+  res.sendFile(path.join(__dirname, 'main.css'));
+});
 
 // Serve the HTML file
 app.get('/', (req, res) => {
