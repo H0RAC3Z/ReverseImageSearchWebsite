@@ -51,6 +51,11 @@ app.get('/tools/:sku', async (req, res) => {
   }
 });
 
+// Serve the HTML file
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html')); // Replace 'index.html' with the name of your HTML file
+});
+
 // Start the Express server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
