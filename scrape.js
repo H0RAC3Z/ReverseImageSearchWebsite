@@ -1,10 +1,7 @@
 const puppeteer = require('puppeteer');
+const { MongoClient } = require('mongodb');
 
-const mpr_url = 'https://mprtools.com/products/ingersoll-rand-1105max-d2-1-4-inch-composite-air-ratchet-by-ingersoll-rand';
-const jb_url = 'https://ca.jbtools.com/ingersoll-rand-285b-6-air-impact-wrench-1-drive-with-6-extended-anvil-1475-ft-lbs-new/';
-const tenaquip_url = 'https://www.tenaquip.com/product/ingersoll-rand-2135qxpa-impact-wrench-1-2-drive-1-4-npt-air-inlet-11000-no-load-rpm-2135qxpa-uae021?originalQuery=2135QXPA'; 
-
-async function scrapePrice_mpr() {
+async function scrapePrice_mpr(mpr_url) {
     // Launch the browser
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -23,13 +20,12 @@ async function scrapePrice_mpr() {
     });
 
     
-    console.log('MPR Extracted Price:', price);
-
-    
     await browser.close();
+
+    return price;
 }
 
-async function scrapePrice_jb() {
+async function scrapePrice_jb(jb_url) {
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -41,17 +37,15 @@ async function scrapePrice_jb() {
 
   const price = await page.evaluate(() => {
     return document.querySelector('span.price--withoutTax')?.innerText || "No Price found";
-  });
+  })
 
-  console.log('JB tools Price:', price);
-
-  // Close the browser
   await browser.close();
+
+  return price;
 
 }
 
-
-async function scrapePrice_tenaquip() {
+async function scrapePrice_tenaquip(tenaquip_url) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
@@ -70,28 +64,61 @@ async function scrapePrice_tenaquip() {
  
 }
 
-const { MongoClient } = require('mongodb');
 
-async function addData() {
-    const uri = 'mongodb://localhost:27017'; // MongoDB URI
-    const client = new MongoClient(uri);
+ function updatePrices() {
+  const uri = 'mongodb://localhost:27017'; 
+  const client = new MongoClient(uri, { useUnifiedTopology: true });
 
-    
+  client.connect().then(() => {
+    const db = client.db('ToolsDB');
+    const collection = db.collection('ToolsDB'); 
 
-    const value = await scrapePrice_tenaquip();
- 
-    try {
-        await client.connect();
-       const database = client.db('ToolsDB'); 
-       const collection = database.collection('ToolsDB'); 
- 
+    const cursor = collection.find();
 
-       const result = await collection.insertOne({ name: "Tenaquip3", price: value });
-       console.log(`Document inserted with _id: ${result.insertedId}`);
+    function processNext() 
+    {
+      cursor.hasNext().then(hasNext => {
+        if (hasNext) 
+          {
+          cursor.next().then(document => {
+            const mprLink = document.MPR_link;
+            const jbLink = document.JB_link;
+            const tenaquipLink = document.Tenaquip_link;
 
-    } finally {
-        await client.close();
+            const mprPricePromise = mprLink ? scrapePrice_mpr(mprLink) : Promise.resolve(null);
+            const jbPricePromise = jbLink ? scrapePrice_jb(jbLink) : Promise.resolve(null);
+            const tenaquipPricePromise = tenaquipLink ? scrapePrice_tenaquip(tenaquipLink) : Promise.resolve(null);
+
+            Promise.all([mprPricePromise, jbPricePromise, tenaquipPricePromise]).then(prices => {
+              const [mprPrice, jbPrice, tenaquipPrice] = prices;
+
+              const updateFields = {};
+              if (mprPrice !== null) updateFields.MPR_price = mprPrice;
+
+              if (jbPrice !== null) updateFields.JB_price = jbPrice;
+              if (tenaquipPrice !== null) updateFields.Tenaquip_price = tenaquipPrice;
+
+              if (Object.keys(updateFields).length > 0) {
+                collection.updateOne({ _id: document._id }, { $set: updateFields }).then(() => {
+                  console.log(`Updated document ${document._id} with prices:`, updateFields);
+                  processNext();
+                });
+              } else {
+                console.log(`No prices found for document ${document._id}`);
+                processNext();
+              }
+            });
+          });
+        } else {
+          client.close().then(() => {
+            console.log('Finished updating prices.');
+          });
+        }
+      });
     }
- }
 
- addData();
+    processNext();
+  });
+}
+
+updatePrices()
