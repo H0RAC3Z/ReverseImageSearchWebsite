@@ -6,7 +6,7 @@ const path = require('path');
 
 // Connect to MongoDB
 // Replace with your MongoDB Atlas connection string if needed
-mongoose.connect('mongodb://127.0.0.1:27017/toolsdatabase', {
+mongoose.connect('mongodb://localhost:27017/toolsdatabase', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
