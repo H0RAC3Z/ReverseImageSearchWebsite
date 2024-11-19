@@ -57,6 +57,7 @@ a:hover {
 
 #mpn:focus {
 	box-shadow:0px 0px 10px 3px var(--raisin-black);
+	outline:none;
 }
 
 #searchImg {
