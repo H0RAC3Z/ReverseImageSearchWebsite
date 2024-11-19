@@ -46,7 +46,7 @@ a:hover {
 	align-items: center;
 }
 
-#sku {
+#mpn {
 	border-style: solid;
 	border-radius: 10px;
 	height: 20px;
@@ -55,7 +55,7 @@ a:hover {
 	transition: box-shadow 0.5s;
 }
 
-#sku:focus {
+#mpn:focus {
 	box-shadow:0px 0px 10px 3px var(--raisin-black);
 }
 
