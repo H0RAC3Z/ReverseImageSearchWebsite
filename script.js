@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fetch a tool by SKU
   fetchToolButton.addEventListener('click', async () => {
-    const mpn = skuInput.value.trim();
+    const mpn = mpnInput.value.trim();
     if (!mpn) {
       displayOutput('Please enter an MPN');
       return;
