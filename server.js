@@ -60,12 +60,12 @@ app.get('/script.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'script.js'));
 });
 
-// Serve the JavaScript file
+// Serve the search file file
 app.get('/searchFile.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'searchFile.html'));
 });
 
-// Serve the JavaScript file
+// Serve the search mpn file
 app.get('/searchMpn.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'searchMpn.html'));
 });
