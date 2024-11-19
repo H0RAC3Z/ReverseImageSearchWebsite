@@ -76,7 +76,7 @@ app.get('/main.css', (req, res) => {
 });
 
 // Serve the HTML file
-app.get('/', (req, res) => {
+app.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
