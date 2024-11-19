@@ -1,0 +1,208 @@
+[{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db51"
+  },
+  "MPN": "2967-20",
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280x1280/products/193046/328590/17682350-891d-45c2-8c2a-4a386c88d991_MLW-2967-20__80029.1730794290.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/milwaukee-tool-2967-20-m18-fuel-1-2-drive-high-torque-impact-wrench-kit-with-friction-ring-bare-tool?_pos=1&_psq=2967-20&_ss=e&_v=1.0",
+  "JB_link": "https://ca.jbtools.com/milwaukee-m18-1-2-impact-wrench-18v-brushless-motor-and-friction-ring-2967-20/?srsltid=AfmBOop_CQGBZ5L893xNGlf3Q9mIUzIVoAsTd861rDcYQFKRkwDBQBQp",
+  "Tenaquip_link": "https://www.tenaquip.com/product/milwaukee-m18-fuel-1-2-high-torque-impact-wrench-with-friction-ring-18-v-1-2-socket-2967-20-uax291?originalQuery=2967-20&src=sayt",
+  "MPR_price": "$328.00",
+  "JB_price": "CA$365.99",
+  "Tenaquip_price": "$328.00"
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db52"
+  },
+  "MPN": "2869-20",
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280w/products/108904/17984/47ff43e7-0968-46fe-9d24-a7793ade7ee9__73614.1647922477.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/milwaukee-2869-20-m18-fuel-1-d-handle-ext-anvil-high-torque-impact-wrench-w-one-key?_pos=1&_sid=27b018881&_ss=r",
+  "JB_link": "https://ca.jbtools.com/milwaukee-m18-fuel-1-d-handle-extended-anvil-high-torque-impact-wrench-w-one-key-2869-20/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/milwaukee-m18-fuel-d-handle-extended-anvil-high-torque-impact-wrench-with-one-key-tool-only-18-v-1-socket-2869-20-uak077?originalQuery=2869-20",
+  "MPR_price": "$1,249.00",
+  "JB_price": "CA$1,244.99",
+  "Tenaquip_price": "$1,365.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db53"
+  },
+  "MPN": "2175MAX",
+  "Image_link": "https://mprtools.com/cdn/shop/files/Ingersoll-Rand-2175MAX-1-Pistol-Grip-Impact-Wrench.jpg?v=1724453495",
+  "MPR_link": "https://mprtools.com/products/ingersoll-rand-2175max-1-pistol-grip-impact-wrench?_pos=1&_sid=691710a0b&_ss=r",
+  "JB_link": "https://ca.jbtools.com/ingersoll-rand-3-4-air-impact-wrench-1350-ft-lb-torque-max-7000-rpm-2175max/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/ingersoll-rand-pistol-grip-impact-wrench-1-drive-1-2-npt-air-inlet-4500-no-load-rpm-2175max-uai483?originalQuery=2175MAX",
+  "MPR_price": "$1,025.88",
+  "JB_price": "CA$1,024.99",
+  "Tenaquip_price": "$1,298.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db54"
+  },
+  "MPN": "2135QXPA",
+  "Image_link": "https://mprtools.com/cdn/shop/files/Ingersoll-Rand-2135QXPA-Impactool_-12.jpg?v=1724406033",
+  "MPR_link": "https://mprtools.com/products/ingersoll-rand-2135qxpa-impactool-1-2?_pos=1&_sid=9bdf2c380&_ss=r",
+  "JB_link": "https://ca.jbtools.com/AirCat-1056-xl-1-2-composite-stubby-impact-wrench/?refSrc=10565&nosto=productpage-nosto-8",
+  "Tenaquip_link": "https://www.tenaquip.com/product/ingersoll-rand-2135qxpa-impact-wrench-1-2-drive-1-4-npt-air-inlet-11000-no-load-rpm-2135qxpa-uae021?originalQuery=2135QXPA",
+  "MPR_price": "$366.97",
+  "JB_price": "CA$207.99",
+  "Tenaquip_price": "$473.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db55"
+  },
+  "MPN": "7803RA",
+  "Image_link": "https://mprtools.com/cdn/shop/files/Ingersoll-Rand-7803RA-Heavy-Duty-12-Inch-Reversible-Pnuematic-Drill.jpg?v=1724406423",
+  "MPR_link": "https://mprtools.com/products/ingersoll-rand-7803ra-heavy-duty-1-2-inch-reversible-pnuematic-drill?_pos=1&_sid=bc337aafd&_ss=r",
+  "JB_link": "https://ca.jbtools.com/ingersoll-rand-air-drill-1-2-reversible-0-5-hp-motor-keyed-chuck-7803ra/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/ingersoll-rand-reversible-air-drill-4-cfm-1-4-nptf-94-dba-1-2-chuck-keyed-7803ra-tu721?originalQuery=7803RA&src=sayt",
+  "MPR_price": "$296.81",
+  "JB_price": "CA$362.99",
+  "Tenaquip_price": "$396.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db56"
+  },
+  "MPN": "119MAXK",
+  "Image_link": "https://mprtools.com/cdn/shop/files/Ingersoll-Rand-119MAXK-Long-Barrel-Air-Hammer-Kit.jpg?v=1724445778",
+  "MPR_link": "https://mprtools.com/products/ingersoll-rand-119maxk-long-barrel-air-hammer-kit?_pos=1&_sid=2be06b230&_ss=r",
+  "JB_link": "https://ca.jbtools.com/ingersoll-rand-irt119maxk-long-barrel-air-hammer-kit-low-vibration/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/ingersoll-rand-air-hammer-kit-238-cfm-1-4-nptf-2530-bpm-3-4-x-3-1-2-19-mm-x-89-mm-119maxk-uaj388?originalQuery=119MAXK&src=sayt",
+  "MPR_price": "$275.45",
+  "JB_price": "CA$226.99",
+  "Tenaquip_price": "$314.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db57"
+  },
+  "MPN": "DWP849X",
+  "Image_link": "https://mprtools.com/cdn/shop/files/DeWalt-DWP849X-BufferPolisher-Variable-Speed-Soft-Start-7-Inch9-Inch.jpg?v=1724452712",
+  "MPR_link": "https://mprtools.com/products/dewalt-buffer-polisher-variable-speed-soft-start-7-inch-9-inch-dwp849x?_pos=1&_sid=6d67b89d8&_ss=r",
+  "JB_link": "https://ca.jbtools.com/dewalt-dwp849x-7-9-variable-speed-rotary-polisher-12-amp/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/dewalt-variable-speed-polisher-with-soft-start-9-7-pad-120-v-12-a-0-3500-rpm-dwp849x-tlv918?originalQuery=DWP849X",
+  "MPR_price": "$283.82",
+  "JB_price": "CA$292.99",
+  "Tenaquip_price": "$449.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db58"
+  },
+  "MPN": "DCF630B",
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280x1280/products/41544/295467/34e43402-5036-4764-86f3-22e205a21de4_DEW-DCF630B__02936.1724056082.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/dewalt-dcf630b-20v-max-bl-drywall-screwgun-bare?_pos=1&_sid=33f072134&_ss=r",
+  "JB_link": "https://ca.jbtools.com/dewalt-cordless-drywall-screw-gun-hex-brushless-4400-rpm-20-volt-dcf620b/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/dewalt-max-xr-drywall-screw-gun-cut-out-tool-combo-kit-lithium-ion-20-v-dck263d2-uai787",
+  "MPR_price": "$173.74",
+  "JB_price": "CA$278.99",
+  "Tenaquip_price": "$655.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db59"
+  },
+  "MPN": "DCGG571B",
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280x1280/products/41625/321901/83546487-f7df-44e7-a656-e011755d514b_DEW-DCGG571B__13486.1727789047.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/dewalt-dcgg571b-20v-max-variable-speed-grease-gun-bare-tool-10-000-psi-42-hose?_pos=1&_sid=7af102a5e&_ss=r",
+  "JB_link": "https://ca.jbtools.com/dewalt-dcgg571b-20v-max-cordless-grease-gun-tool-only/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/dewalt-max-grease-gun-tool-only-lithium-ion-20-v-dcgg571b-tyd765?originalQuery=DCGG571B&src=sayt",
+  "MPR_price": "$249.00",
+  "JB_price": "CA$248.99",
+  "Tenaquip_price": "$249.00"
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db5a"
+  },
+  "MPN": "DW758",
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280x1280/products/42837/322686/a8151ff8-21f5-475e-8d7c-eba2fc5bbfd6_DEW-DW758__50894.1727791418.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/dewalt-bench-grinder-8-inch-dw758?_pos=2&_sid=b7a1e78c6&_ss=r",
+  "JB_link": "https://ca.jbtools.com/dewalt-dw758-8-inch-bench-grinder/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/dewalt-heavy-duty-bench-grinder-8-wheel-diameter-3-4-hp-3600-rpm-dw758-ve370?originalQuery=DW758",
+  "MPR_price": "$230.71",
+  "JB_price": "CA$222.99",
+  "Tenaquip_price": "$319.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db5b"
+  },
+  "MPN": "DCCS623B",
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280x1280/products/191446/322609/1d1919f3-806b-4b1d-a72b-d3d802864346_DEW-DCCS623B__39200.1727791202.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/dewalt-dccs623b-20v-max-8-in-brushless-cordless-pruning-chainsaw-tool-only?_pos=1&_sid=1a535326f&_ss=r",
+  "JB_link": "",
+  "Tenaquip_link": "https://www.tenaquip.com/product/dewalt-20v-max-8-brushless-cordless-pruning-chainsaw-tool-only-dccs623b-no945?originalQuery=DCCS623B",
+  "MPR_price": "$219.00",
+  "JB_price": 0,
+  "Tenaquip_price": "$235.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db5c"
+  },
+  "MPN": 4151,
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280w/products/67244/317863/f7e3caad-a1da-42e9-8408-68d7cf839743_IRC-4151__86613.1727777363.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/ingersoll-rand-4151-ultra-duty-6-inch-vacuum-ready-random-orbit-pneumatic-sander?_pos=4&_sid=e51a92355&_ss=r",
+  "JB_link": "https://ca.jbtools.com/ingersoll-rand-3-16-random-orbital-sander-6-inch-pad-psa-12000-rpm-4151/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/ingersoll-rand-random-orbital-air-sander-6-dia-1-4-npt-inlet-12000-rpm-4151-bw394?originalQuery=4151",
+  "MPR_price": "$222.76",
+  "JB_price": "CA$212.99",
+  "Tenaquip_price": "$290.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db5d"
+  },
+  "MPN": "36QMAX",
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280w/products/67230/318614/69fc239c-ed11-40e3-a4f7-7c60ad7225f0_IRC-36QMAX__76858.1727779505.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/ingersoll-rand-model-36qmax-ultra-compact-1-2-impact-wrench-with-quiet-technology?_pos=1&_sid=cb336c5f0&_ss=r",
+  "JB_link": "https://ca.jbtools.com/ingersoll-rand-irt36qmax-1-2-drive-ultra-compact-impact-wrench/?utm_campaign=pr_r&utm_source=www.jbtools.com&utm_medium=wi_proxy&utm_content=en_CA",
+  "Tenaquip_link": "https://www.tenaquip.com/product/ingersoll-rand-36qmax-quiet-ultra-compact-impact-wrench-1-2-drive-1-4-npt-air-inlet-8000-no-load-rpm-36qmax-uaj557?originalQuery=36QMAX++",
+  "MPR_price": "$271.34",
+  "JB_price": "CA$219.99",
+  "Tenaquip_price": "$309.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db5e"
+  },
+  "MPN": "2850MAX",
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280x1280/products/67147/300537/2c303082-9863-407d-8082-697fb15f44cf_IRC-2850MAX__65861.1724070307.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/ingersoll-rand-2850max-wrench-1-impact?_pos=2&_sid=2b6aa5b2f&_ss=r",
+  "JB_link": "https://ca.jbtools.com/ingersoll-rand-2850max-6-1in-drive-d-handle-air-impact-wrench-with-6in-anvil/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/ingersoll-rand-2850max-series-impact-wrench-1-drive-1-2-npt-air-inlet-5500-no-load-rpm-2850max-uae942",
+  "MPR_price": "$1,087.87",
+  "JB_price": "CA$878.99",
+  "Tenaquip_price": "$1,278.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db5f"
+  },
+  "MPN": "285B-6",
+  "Image_link": "https://cdn11.bigcommerce.com/s-8sp77pdf4a/images/stencil/1280w/products/67150/325990/dbec898e-4978-4850-b892-7d24e2810293_IRC-285B-6__20340.1728807161.jpg?c=1",
+  "MPR_link": "https://mprtools.com/products/ingersoll-rand-285b-6-heavy-duty-1-inch-pneumatic-impact-wrench-with-6-inch-extended-anvil?_pos=1&_psq=285B-6&_ss=e&_v=1.0",
+  "JB_link": "https://ca.jbtools.com/ingersoll-rand-285b-6-air-impact-wrench-1-drive-with-6-extended-anvil-1475-ft-lbs-new/",
+  "Tenaquip_link": "https://www.tenaquip.com/product/ingersoll-rand-285b-extended-anvil-impact-wrench-1-drive-1-2-nptf-air-inlet-5250-no-load-rpm-285b-6-tu666",
+  "MPR_price": "$816.16",
+  "JB_price": "CA$717.99",
+  "Tenaquip_price": "$1,172.00 "
+},
+{
+  "_id": {
+    "$oid": "673802a34409687cc3d7db60"
+  },
+  "MPN": 261,
+  "Image_link": "https://mprtools.com/cdn/shop/files/Ingersoll-Rand-261-34-Inch-Super-Duty-Air-Impact-Wrench.jpg?v=1724406127",
+  "MPR_link": "https://mprtools.com/products/ingersoll-rand-261-3-4-inch-super-duty-air-impact-wrench?_pos=2&_sid=fe0dbf1c5&_ss=r",
+  "JB_link": "https://ca.jbtools.com/ingersoll-rand-261-air-impact-wrench-3-4-drive-super-duty/?gad_source=1&gclid=Cj0KCQiA_9u5BhCUARIsABbMSPsSPfc9-rWqzZRIiA-tPBN4Z66RXaVgdF6d5o0WqPVLAWmmtu2hyRsaAr5rEALw_wcB&utm_campaign=pr_r&utm_source=www.jbtools.com&utm_medium=wi_proxy&utm_content=en_CA",
+  "Tenaquip_link": "https://www.tenaquip.com/product/ingersoll-rand-261-impact-wrench-3-4-drive-3-8-npt-air-inlet-5500-no-load-rpm-261-nke973",
+  "MPR_price": "$767.41",
+  "JB_price": "$64.99",
+  "Tenaquip_price": "$970.00 "
+}]
