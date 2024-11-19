@@ -94,4 +94,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+function validateInputs() {
+  const urlInput = document.getElementById("urlInput");
+  const fileInput = document.getElementById("fileInput");
 
+  const urlValue = urlInput?.value.trim();
+  const fileValue = fileInput?.files.length > 0;
+
+  if (!urlValue && !fileValue) {
+    alert("You must provide a URL or upload a file.");
+    return false;
+  } else if (urlValue && fileValue) {
+    alert("Please fill out only one field at a time.");
+    return false;
+  }
+
+  return true;
+}
