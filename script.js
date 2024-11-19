@@ -39,7 +39,7 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
 
 // Below contains the javascript to get an sku from data.js
 document.addEventListener('DOMContentLoaded', () => {
-  const baseUrl = 'http://localhost:3000';
+  const baseUrl = 'http://localhost:27017';
   
   const fetchToolButton = document.getElementById('fetch-tool');
   const mpnInput = document.getElementById('mpn');
