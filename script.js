@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch(`${baseUrl}/ToolsDB/${mpn}`);
+      const response = await fetch(`${baseUrl}/ToolsDB/ToolsDB/${mpn}`);
       if (response.status === 404) {
         displayOutput('Tool not found');
         return;
