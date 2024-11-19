@@ -93,6 +93,10 @@ footer {
 .mainBodyTxt {
 	color: var(--seasalt);
 	padding: 40px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	color: var(--seasalt);
 }
 
 .drop-zone {
@@ -110,18 +114,4 @@ footer {
 }
 .drop-zone__input {
   display: none;
-}
-
-#aboutUsBody {
-	color: var(--seasalt);
-	padding: 40px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	color: var(--seasalt);
-}
-
-#gradCap {
-	height: 100px;
-	width: auto;
 }
