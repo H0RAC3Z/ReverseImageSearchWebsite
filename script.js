@@ -133,7 +133,7 @@ function updateThumbnail(dropZoneElement, file) {
 
 
 
-// Below contains the javascript to get an sku from data.js
+// Below contains the javascript to get an mpn from mongodb
 document.addEventListener('DOMContentLoaded', () => {
   const baseUrl = 'http://localhost:27017';
   
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const outputDiv = document.getElementById('output');
 
 
-  // Fetch a tool by SKU
+  // Fetch a tool by MPN
   fetchToolButton.addEventListener('click', async () => {
     const mpn = mpnInput.value.trim();
     if (!mpn) {
