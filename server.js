@@ -75,6 +75,11 @@ app.get('/main.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.css'));
 });
 
+// Serve the HTML file as root
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // Serve the HTML file
 app.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
