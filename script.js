@@ -62,20 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const baseUrl = 'http://localhost:3000';
   
   const fetchToolButton = document.getElementById('fetch-tool');
-  const skuInput = document.getElementById('sku');
+  const mpnInput = document.getElementById('mpn');
   const outputDiv = document.getElementById('output');
 
 
   // Fetch a tool by SKU
   fetchToolButton.addEventListener('click', async () => {
-    const sku = skuInput.value.trim();
-    if (!sku) {
-      displayOutput('Please enter an SKU');
+    const mpn = skuInput.value.trim();
+    if (!mpn) {
+      displayOutput('Please enter an MPN');
       return;
     }
 
     try {
-      const response = await fetch(`${baseUrl}/tools/${sku}`);
+      const response = await fetch(`${baseUrl}/tools/${mpn}`);
       if (response.status === 404) {
         displayOutput('Tool not found');
         return;
