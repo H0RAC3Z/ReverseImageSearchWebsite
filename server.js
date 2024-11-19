@@ -52,6 +52,7 @@ app.get('/tools/:sku', async (req, res) => {
   }
 });
 
+// Use images folder
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // Serve the JavaScript file
