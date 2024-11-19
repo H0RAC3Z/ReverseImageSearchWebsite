@@ -60,6 +60,16 @@ app.get('/script.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'script.js'));
 });
 
+// Serve the JavaScript file
+app.get('/searchFile.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'searchFile.html'));
+});
+
+// Serve the JavaScript file
+app.get('/searchMpn.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'searchMpn.html'));
+});
+
 // Serve the CSS file directly
 app.get('/main.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.css'));
