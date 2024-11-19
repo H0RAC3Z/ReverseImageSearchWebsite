@@ -83,11 +83,16 @@ footer {
 	background-color: var(--flax);
 }
 
-.mainbodytxt {
+.mainPageTxt {
 	color: var(--seasalt);
 	margin: 40px;
 	font-size: 96px;
 	overflow: hidden;
+}
+
+.mainBodyTxt {
+	color: var(--seasalt);
+	padding: 40px;
 }
 
 .drop-zone {
