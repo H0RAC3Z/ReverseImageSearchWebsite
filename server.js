@@ -40,9 +40,9 @@ app.get('/tools', async (req, res) => {
 });
 
 // Example query route to fetch tools by SKU
-app.get('/tools/:sku', async (req, res) => {
+app.get('/tools/:mpn', async (req, res) => {
   try {
-    const tool = await Tool.findOne({ SKU: req.params.sku });  // Find a tool by SKU
+    const tool = await Tool.findOne({ MPN: req.params.mpn });  // Find a tool by SKU
     if (!tool) {
       return res.status(404).send('Tool not found');
     }
