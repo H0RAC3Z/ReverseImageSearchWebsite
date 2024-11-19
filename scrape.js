@@ -15,6 +15,7 @@ async function scrapePrice_mpr(mpr_url) {
         
         // Extract the "Price" value using a regular expression
         const priceMatch = scriptContent.match(/Price:\s*"(.*?)"/);
+       
         
         return priceMatch ? priceMatch[1] : null; // Return the price if found
     });
@@ -26,24 +27,32 @@ async function scrapePrice_mpr(mpr_url) {
 }
 
 async function scrapePrice_jb(jb_url) {
-
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-
 
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36');
 
   const response = await page.goto(jb_url, { waitUntil: 'networkidle2' });
 
   const price = await page.evaluate(() => {
-    return document.querySelector('span.price--withoutTax')?.innerText || "No Price found";
-  })
+    const priceText = document.querySelector('span.price--withoutTax')?.innerText || "No Price found";
+    
+    // Use a regex to extract the first numerical value (including decimals)
+    const match = priceText.match(/[\d,]+(\.\d+)?/); 
+    
+    if (match) {
+      // Remove commas and return the clean numerical value with the dollar sign
+      return `$${match[0].replace(/,/g, '')}`;
+    } else {
+      return "No Price found";
+    }
+  });
 
   await browser.close();
 
   return price;
-
 }
+
 
 async function scrapePrice_tenaquip(tenaquip_url) {
   const browser = await puppeteer.launch();
@@ -70,8 +79,8 @@ async function scrapePrice_tenaquip(tenaquip_url) {
   const client = new MongoClient(uri, { useUnifiedTopology: true });
 
   client.connect().then(() => {
-    const db = client.db('ToolsDB');
-    const collection = db.collection('ToolsDB'); 
+    const db = client.db('toolsdatabase');
+    const collection = db.collection('tools'); 
 
     const cursor = collection.find();
 
