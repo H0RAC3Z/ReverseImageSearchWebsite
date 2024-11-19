@@ -16,22 +16,26 @@
 		
 		
 		
-		<div class="mainbody">
-			<div class="search-container">
-				<div class="drop-zone">
-					<span class="drop-zone_prompt">Enter URL or click to upload</span>
-					<input type="url" id="urlInput" class="drop-zone__input" placeholder="Enter URL">
-				</div>
+			<div class="mainbody">
+				<form id="searchForm">
+					<div class="search-container">
+						<div class="drop-zone">
+							<span class="drop-zone_prompt">Enter URL or click to upload</span>
+							<input type="url" id="urlInput" class="drop-zone__input" placeholder="Enter URL" name="url">
+						</div>
 
-				<div class="drop-zone">
-				  <span class="drop-zone_prompt">Drop files here or click to upload</span>
-				  <input type="file" id="fileInput" class="drop-zone__input">
-				</div>
-
-				<button id="fetch-tool2"><img src="images/search.PNG" id="searchImg"></button>
+						<div class="drop-zone">
+							<span class="drop-zone_prompt">Drop files here or click to upload</span>
+							<input type="file" id="fileInput" class="drop-zone__input" name="file">
+						</div>
+	
+						<button type="submit" id="fetch-tool2">
+						<img src="images/search.PNG" id="searchImg" alt="Search">
+						</button>
+					</div>
+				</form>
 			</div>
-			
-		</div>
+
 		
 	
 		<div id="output"></div>
