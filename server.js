@@ -1,48 +1,42 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const app = express();
-const port = 3000;
+const { MongoClient } = require('mongodb');
 const path = require('path');
 
-// Connect to MongoDB
-// Replace with your MongoDB Atlas connection string if needed
-mongoose.connect('mongodb://localhost:27017/toolsdatabase', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('Error connecting to MongoDB', err));
+const app = express();
+const port = process.env.PORT || 3000;
 
-// Define a Schema for the "tools" collection
-const toolSchema = new mongoose.Schema({
-  SKU: String,
-  MPN: String,
-  "Image Link": String,
-  "MPR Link": String,
-  "JB TOOLS Link": String,
-  "TENAQUIP Link": String,
-  "$ MPR TOOLS": Number,
-  "$ JB TOOLS": Number,
-  "TENAQUIP": Number
-}, { collection: 'tools' });  // Specify the collection name explicitly
+const uri = 'mongodb://localhost:27017';  
+const client = new MongoClient(uri, { useUnifiedTopology: true });
 
-// Create a model for the "tools" collection
-const Tool = mongoose.model('Tool', toolSchema);
+let db;
+let collection;
 
-// Example query route to fetch all tools
-app.get('/tools', async (req, res) => {
+client.connect().then(() => {
+  db = client.db('ToolsDB');
+  collection = db.collection('ToolsDB'); // Collection name is 'ToolsDB'
+
+  // Start the Express server after the DB connection is established
+  app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+  });
+}).catch(err => {
+  console.error('Failed to connect to MongoDB', err);
+});
+
+// Route to get all tools
+app.get('/toolsdb', async (req, res) => {
   try {
-    const tools = await Tool.find();  // Query all tools from the "tools" collection
+    const tools = await collection.find().toArray();
     res.json(tools);
   } catch (err) {
     res.status(500).send('Error retrieving tools');
   }
 });
 
-// Example query route to fetch tools by SKU
+// Route to get a tool by MPN
 app.get('/tools/:mpn', async (req, res) => {
   try {
-    const tool = await Tool.findOne({ MPN: req.params.mpn });  // Find a tool by SKU
+    const tool = await collection.findOne({ MPN: req.params.mpn });
     if (!tool) {
       return res.status(404).send('Tool not found');
     }
@@ -52,43 +46,32 @@ app.get('/tools/:mpn', async (req, res) => {
   }
 });
 
-// Use images folder
+// Serve static files from 'images' and 'pages' directories
 app.use('/images', express.static(path.join(__dirname, 'images')));
-
-// Use pages folder
 app.use('/pages', express.static(path.join(__dirname, 'pages')));
 
-// Serve the JavaScript file
+// Serve individual files
 app.get('/script.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'script.js'));
 });
 
-// Serve the search file file
 app.get('/searchFile.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'searchFile.html'));
 });
 
-// Serve the search mpn file
 app.get('/searchMpn.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'searchMpn.html'));
 });
 
-// Serve the CSS file directly
 app.get('/main.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.css'));
 });
 
-// Serve the HTML file as root
+// Serve the index.html file at root
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Serve the HTML file
 app.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-// Start the Express server
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
 });
