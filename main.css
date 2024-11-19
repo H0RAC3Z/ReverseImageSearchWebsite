@@ -121,13 +121,13 @@ footer {
 	width: auto;
 }
 
-.contactUsBody {
+#contactUsBody {
 	color: var(--seasalt);
 	padding: 40px;
 }
 
 
-.termsBody {
+#termsBody {
 	color: var(--seasalt);
 	padding: 40px;
 }
