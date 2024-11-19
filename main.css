@@ -92,6 +92,8 @@ footer {
 }
 
 .mainBodyTxt {
+	margin-top: 90px;
+	margin-bottom: 90px;
 	color: var(--seasalt);
 	padding: 40px;
 	display: flex;
