@@ -11,23 +11,29 @@
 		<div class="navbar">
 			<a href="index.html"><h1>ToolImageSearch</h1></a>
 			<a href="">Product List</a>
-			<a href="searchFile.html">Search by Image</a>
-			<a href="searchMpn.html">Search by MPN</a>
 		</div>
-
-			
-
+		
+		
+		
 		
 		<div class="mainbody">
 			<div class="search-container">
 				<div class="drop-zone">
-					<span class="drop-zone_prompt">Drop files here or click to upload</span>
-					<input type="file" name="file" id="file" class="drop-zone_input">
+					<span class="drop-zone_prompt">Enter URL or click to upload</span>
+					<input type="url" id="urlInput" class="drop-zone__input" placeholder="Enter URL">
 				</div>
-				<button id="fetch-tool"><img src="images/search.PNG" id="searchImg"></button>
-			</div>
-		</div>
 
+				<div class="drop-zone">
+				  <span class="drop-zone_prompt">Drop files here or click to upload</span>
+				  <input type="file" id="fileInput" class="drop-zone__input">
+				</div>
+
+				<button id="fetch-tool2"><img src="images/search.PNG" id="searchImg"></button>
+			</div>
+			
+		</div>
+		
+	
 		<div id="output"></div>
 		
 		<footer>
