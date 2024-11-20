@@ -115,7 +115,7 @@ footer {
 .drop-zone--over {
     border-color: var(--coral-pink);
     background-color: rgba(235, 148, 134, 0.1);
-
+}
 .drop-zone__prompt {
   font-weight: bold;
 }
@@ -132,4 +132,8 @@ footer {
     background-position: center;
     border-radius: 5px;
     border: 1px solid var(--cool-gray);
+}
+
+#output {
+	color: white;
 }
