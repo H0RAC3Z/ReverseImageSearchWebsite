@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log("URL Input:", urlInput);
 
-        // Validate inputs
-        if (!validateInputs()) return;
 
         const formData = new FormData();
         formData.append("url", urlInput);
