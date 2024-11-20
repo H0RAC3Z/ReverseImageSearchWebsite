@@ -4,17 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault(); // Prevent default submission
 
         const urlInput = document.getElementById("urlInput").value.trim();
-        const fileInput = document.getElementById("fileInput").files[0];
 
         console.log("URL Input:", urlInput);
-        console.log("File Input:", fileInput ? fileInput.name : "No file selected");
 
         // Validate inputs
         if (!validateInputs()) return;
 
         const formData = new FormData();
         formData.append("url", urlInput);
-        if (fileInput) formData.append("file", fileInput);
 
         fetch("your-server-endpoint", {
             method: "POST",
