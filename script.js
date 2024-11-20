@@ -1,72 +1,72 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-document.getElementById("searchForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default submission
+    document.getElementById("searchForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default submission
 
-    const urlInput = document.getElementById("urlInput").value.trim();
-    const fileInput = document.getElementById("fileInput").files[0];
+        const urlInput = document.getElementById("urlInput").value.trim();
+        const fileInput = document.getElementById("fileInput").files[0];
 
-    console.log("URL Input:", urlInput);
-    console.log("File Input:", fileInput ? fileInput.name : "No file selected");
+        console.log("URL Input:", urlInput);
+        console.log("File Input:", fileInput ? fileInput.name : "No file selected");
 
-    // Validate inputs
-    if (!validateInputs()) return;
+        // Validate inputs
+        if (!validateInputs()) return;
 
-    const formData = new FormData();
-    formData.append("url", urlInput);
-    if (fileInput) formData.append("file", fileInput);
+        const formData = new FormData();
+        formData.append("url", urlInput);
+        if (fileInput) formData.append("file", fileInput);
 
-    fetch("your-server-endpoint", {
-        method: "POST",
-        body: formData,
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Server Response:", data);
-            document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+        fetch("your-server-endpoint", {
+            method: "POST",
+            body: formData,
         })
-        .catch((error) => {
-            console.error("Error:", error);
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("Server Response:", data);
+                document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    });
+
+    // Drag-and-drop functionality
+    document.querySelectorAll(".drop-zone").forEach((dropZoneElement) => {
+        const inputElement = dropZoneElement.querySelector(".drop-zone__input");
+
+        dropZoneElement.addEventListener("click", () => {
+            inputElement.click();
         });
-});
 
-// Drag-and-drop functionality
-document.querySelectorAll(".drop-zone").forEach((dropZoneElement) => {
-    const inputElement = dropZoneElement.querySelector(".drop-zone__input");
+        inputElement.addEventListener("change", () => {
+            console.log("File selected:", inputElement.files[0]?.name || "No file");
+            if (inputElement.files.length) {
+                updateThumbnail(dropZoneElement, inputElement.files[0]);
+            }
+        });
 
-    dropZoneElement.addEventListener("click", () => {
-        inputElement.click();
-    });
+        dropZoneElement.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            dropZoneElement.classList.add("drop-zone--over");
+        });
 
-    inputElement.addEventListener("change", () => {
-        console.log("File selected:", inputElement.files[0]?.name || "No file");
-        if (inputElement.files.length) {
-            updateThumbnail(dropZoneElement, inputElement.files[0]);
-        }
-    });
+        ["dragleave", "dragend"].forEach((type) => {
+            dropZoneElement.addEventListener(type, () => {
+                dropZoneElement.classList.remove("drop-zone--over");
+            });
+        });
 
-    dropZoneElement.addEventListener("dragover", (e) => {
-        e.preventDefault();
-        dropZoneElement.classList.add("drop-zone--over");
-    });
-
-    ["dragleave", "dragend"].forEach((type) => {
-        dropZoneElement.addEventListener(type, () => {
+        dropZoneElement.addEventListener("drop", (e) => {
+            e.preventDefault();
             dropZoneElement.classList.remove("drop-zone--over");
+
+            if (e.dataTransfer.files.length) {
+                inputElement.files = e.dataTransfer.files;
+                console.log("File dropped:", e.dataTransfer.files[0].name);
+                updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+            }
         });
     });
-
-    dropZoneElement.addEventListener("drop", (e) => {
-        e.preventDefault();
-        dropZoneElement.classList.remove("drop-zone--over");
-
-        if (e.dataTransfer.files.length) {
-            inputElement.files = e.dataTransfer.files;
-            console.log("File dropped:", e.dataTransfer.files[0].name);
-            updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
-        }
-    });
-});
 });
 
 // Thumbnail updates for drag-and-drop
