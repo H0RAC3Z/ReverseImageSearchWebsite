@@ -68,23 +68,6 @@ document.querySelectorAll(".drop-zone").forEach((dropZoneElement) => {
     });
 });
 });
-// Input validation
-function validateInputs() {
-    const urlInput = document.getElementById("urlInput").value.trim();
-    const fileInput = document.getElementById("fileInput").files.length > 0;
-
-    if (!urlInput && !fileInput) {
-        alert("You must provide a URL or upload a file.");
-        return false;
-    }
-
-    if (urlInput && fileInput) {
-        alert("Please fill out only one field at a time.");
-        return false;
-    }
-
-    return true;
-}
 
 // Thumbnail updates for drag-and-drop
 function updateThumbnail(dropZoneElement, file) {
