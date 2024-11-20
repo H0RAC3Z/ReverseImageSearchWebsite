@@ -55,14 +55,6 @@ app.get('/script.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'script.js'));
 });
 
-app.get('/searchFile.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'searchFile.html'));
-});
-
-app.get('/searchMpn.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'searchMpn.html'));
-});
-
 app.get('/main.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.css'));
 });
