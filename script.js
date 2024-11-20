@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fetch a tool by MPN
   fetchToolButton.addEventListener("submit", async (event) => {
-    
+    event.preventDefault();
     const mpn = mpnInput.value.trim();
     if (!mpn) {
       displayOutput('Please enter an MPN');
