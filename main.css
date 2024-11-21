@@ -44,6 +44,7 @@ a:hover {
 .search-container {
 	display: flex;
 	align-items: center;
+	align-content: center;
 }
 
 #mpn {
@@ -103,7 +104,8 @@ footer {
 }
 
 .drop-zone {
-  max-width: 200px;
+  width: 300px;
+  height: 150px;
   padding: 25px;
   border: 2px solid black;
   border-radius: 5px;
@@ -136,4 +138,16 @@ footer {
 
 #output {
 	color: white;
+}
+
+#searchForm {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
