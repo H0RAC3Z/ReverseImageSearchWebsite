@@ -12,22 +12,23 @@
 
 body {
 	font-family: Times New Roman, Helvetica, sans-serif;
-	background-color: var(--raisin-black);
-	
+	/* background-color: var(--raisin-black); */
 	margin: 0;
+	background-image: url(images/abstract.jpg);
+	background-repeat: x;
 }
 
 .navbar {
-	color: var(--raisin-black);
+	color: var(--seasalt);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border: 2px var(--black) solid;
-	background-color: var(--grayish);
+	border: 2px var(--seasalt) solid;
+	/* background-color: var(--grayish); */
 	padding: 40px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	background-color: rgb(243, 222, 138);
+	/* background-color: rgb(243, 222, 138); */
 }
 
 .navbar a {
@@ -35,6 +36,7 @@ body {
 	color: var(--raisin-black);
 	font-size: 18px;
 	transition: color 0.5s;
+	color: var(--seasalt);
 }
 
 a:hover {
@@ -68,28 +70,37 @@ a:hover {
 
 footer div a {
 	text-decoration-line: none;
-	color: var(--raisin-black);
+	/* color: var(--raisin-black); */
 	font-size: 18px;
 	padding: 40px;
 	transition: color 0.5s;
+	color: var(--seasalt);
 }
 
 footer {
 	display: flex;
 	justify-content: center;
 	padding: 40px;
-	border: 2px black solid;
+	border: 2px var(--seasalt) solid;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
-	color: var(--cool-gray);
-	background-color: var(--flax);
+	/* color: var(--cool-gray); */
+	/*background-color: var(--flax);*/
+	margin-top: 30%;
+	display: flex;
+	
 }
 
 .mainPageTxt {
 	color: var(--seasalt);
-	margin: 40px;
+	/*margin: 40px; */
 	font-size: 96px;
-	overflow: hidden;
+	overflow: hidden; 
+	/* background-image: url(images/abstract.jpg); */
+	background-repeat: x;
+
+	
+	
 }
 
 .mainBodyTxt {
@@ -101,28 +112,34 @@ footer {
 	align-items: center;
 	flex-direction: column;
 	color: var(--seasalt);
+	
 }
 
 .drop-zone {
-  width: 300px;
-  height: 150px;
+  width: 600px;
+  height: 300px;
   padding: 25px;
-  border: 2px solid black;
+  border: 2px solid var(--seasalt);
   border-radius: 5px;
   text-align: center;
   transition: border-color 0.3s, background-color 0.3s;
   cursor: pointer;
   background-color: car(--flax);
+  color: var(--seasalt);
+  
 }
 .drop-zone--over {
     border-color: var(--coral-pink);
     background-color: rgba(235, 148, 134, 0.1);
+	
 }
 .drop-zone__prompt {
   font-weight: bold;
+  color: var(--seasalt);
 }
 .drop-zone__input {
   display: none;
+   color: var(--seasalt);
 }
 
 .drop-zone__thumb {
@@ -146,8 +163,19 @@ footer {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+	padding: 50px;
+}
+
+footer .footerdiv a:hover {
+    text-decoration: underline;
+}
+
+#fetch-tool2{
+	position: relative;
+	right: 375px;
+	top: 165px;
 }
