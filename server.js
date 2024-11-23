@@ -1,69 +1,87 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
+
+const cors = require('cors');
+
 const path = require('path');
 
-const app = express();
-const port = process.env.PORT || 3000;
+const app1 = express();
 
-const uri = 'mongodb://localhost:27017';  
-const client = new MongoClient(uri, { useUnifiedTopology: true });
+const app2 = express(); 
+
+const port = 3000;
+
+// Middleware
+app1.use(cors());
+app1.use(express.json());
+
+// MongoDB URI and Database Name
+const uri = 'mongodb://localhost:27017'; // Change this to your MongoDB URI
+const dbName = 'ToolsDB'; // Replace with your database name
 
 let db;
-let collection;
 
-client.connect().then(() => {
-  db = client.db('ToolsDB');
-  collection = db.collection('ToolsDB'); // Collection name is 'ToolsDB'
+MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(client => {
+    console.log('Connected to MongoDB');
+    db = client.db(dbName);
+  })
+  .catch(err => console.error(err));
 
-  // Start the Express server after the DB connection is established
-  app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-  });
-}).catch(err => {
-  console.error('Failed to connect to MongoDB', err);
-});
-
-// Route to get all tools
-app.get('/toolsdb', async (req, res) => {
-  try {
-    const tools = await collection.find().toArray();
-    res.json(tools);
-  } catch (err) {
-    res.status(500).send('Error retrieving tools');
+app1.get('/api/search', async (req, res) => {
+  const MPN = req.query.MPN;
+  console.log("Received MPN:", MPN); // Debug input
+  if (!MPN) {
+    return res.status(400).json({ error: 'MPN query parameter is required' });
   }
-});
 
-// Route to get a tool by MPN
-app.get('/tools/:mpn', async (req, res) => {
   try {
-    const tool = await collection.findOne({ MPN: req.params.mpn });
-    if (!tool) {
-      return res.status(404).send('Tool not found');
+    const tool = await db.collection('ToolsDB').findOne({MPN: MPN });
+
+    
+    
+    console.log("Query result:", tool); 
+
+    if (tool) 
+    {
+      res.json(tool);
+    } 
+    else 
+    {
+      res.status(404).json({ error: 'Tool not found' });
     }
-    res.json(tool);
   } catch (err) {
-    res.status(500).send('Error retrieving tool');
+    console.error(err);
+    res.status(500).json({ error: 'Error fetching tool from database' });
   }
 });
 
-// Serve static files from 'images' and 'pages' directories
-app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use('/pages', express.static(path.join(__dirname, 'pages')));
+
+// Start the server
+app1.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+
+
+app1.use('/images', express.static(path.join(__dirname, 'images')));
+app1.use('/pages', express.static(path.join(__dirname, 'pages')));
 
 // Serve individual files
-app.get('/script.js', (req, res) => {
+app1.get('/script.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'script.js'));
 });
 
-app.get('/main.css', (req, res) => {
+app1.get('/main.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.css'));
 });
 
 // Serve the index.html file at root
-app.get('/', (req, res) => {
+app1.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/index.html', (req, res) => {
+app1.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+

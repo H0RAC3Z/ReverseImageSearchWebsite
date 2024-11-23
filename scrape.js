@@ -11,13 +11,15 @@ async function scrapePrice_mpr(mpr_url) {
 
     // Extract the price from the script tag
     const price = await page.evaluate(() => {
-        const scriptContent = document.querySelector('#viewed_product').textContent;
+
+        const scriptContent = document.querySelector('.\\#price-value').textContent;
         
-        // Extract the "Price" value using a regular expression
-        const priceMatch = scriptContent.match(/Price:\s*"(.*?)"/);
-       
-        
-        return priceMatch ? priceMatch[1] : null; // Return the price if found
+        let cleanedPrice = scriptContent.replace(/[^0-9.]/g, "");
+
+        let priceFinal = parseFloat(cleanedPrice)
+
+
+        return priceFinal ? priceFinal : null; // Return the price if found
     });
 
     
@@ -35,22 +37,21 @@ async function scrapePrice_jb(jb_url) {
   const response = await page.goto(jb_url, { waitUntil: 'networkidle2' });
 
   const price = await page.evaluate(() => {
-    const priceText = document.querySelector('span.price--withoutTax')?.innerText || "No Price found";
+
+    const priceText = document.querySelector('span.price.price--withoutTax')?.textContent || "No Price found";
     
-    // Use a regex to extract the first numerical value (including decimals)
-    const match = priceText.match(/[\d,]+(\.\d+)?/); 
-    
-    if (match) {
-      // Remove commas and return the clean numerical value with the dollar sign
-      return `$${match[0].replace(/,/g, '')}`;
-    } else {
-      return "No Price found";
-    }
+    let cleanedPrice = priceText.replace(/[^0-9.-]+/g, '');
+
+    let finalPrice = parseFloat(cleanedPrice)
+
+    return finalPrice ? finalPrice : null
+
   });
 
   await browser.close();
 
   return price;
+
 }
 
 
@@ -64,7 +65,15 @@ async function scrapePrice_tenaquip(tenaquip_url) {
   const response = await page.goto(tenaquip_url, { waitUntil: 'networkidle2' });
 
   const price = await page.evaluate(() => {
-    return document.querySelector('span#details-product-priceSPAN')?.innerText || "No Price found";
+    
+    const intitalScrape = document.querySelector('span#details-product-priceSPAN')?.innerText || "No Price found";
+
+    let cleanedPrice = intitalScrape.replace(/[^0-9.-]+/g, '');
+
+    let finalPrice = parseFloat(cleanedPrice);
+
+    return finalPrice;
+  
   });
 
     await browser.close();
@@ -79,8 +88,8 @@ async function scrapePrice_tenaquip(tenaquip_url) {
   const client = new MongoClient(uri, { useUnifiedTopology: true });
 
   client.connect().then(() => {
-    const db = client.db('toolsdatabase');
-    const collection = db.collection('tools'); 
+    const db = client.db('ToolsDB');
+    const collection = db.collection('ToolsDB'); 
 
     const cursor = collection.find();
 
@@ -130,4 +139,6 @@ async function scrapePrice_tenaquip(tenaquip_url) {
   });
 }
 
-updatePrices()
+updatePrices();
+
+
