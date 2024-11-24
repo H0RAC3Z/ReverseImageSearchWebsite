@@ -52,6 +52,7 @@ a:hover {
 
 .bottomSection {
 	background-color: var(--seasalt);
+	color: var(--raisin-black);
 	border-radius: 5px;
 }
 #mpn {
