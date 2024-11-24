@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check if parsedData contains the expected properties
         if (parsedData.imglink && parsedData.link && parsedData.source) {
             outputDiv.innerHTML = `
-                <img src="${parsedData.imglink}" alt="Product Image">
-                <h3>Cheapest Price: <a href="${parsedData.link}" target="_blank">${parsedData.source}</a></h3>
+                <img src="${parsedData.imglink}" alt="Product Image" id="outputImg">
+                <h3>Cheapest Price: </h3><h3><a href="${parsedData.link}" target="_blank">${parsedData.source}</a></h3>
             `;
         } else {
             outputDiv.innerHTML = `<p>Unexpected data structure or missing fields.</p>`;
