@@ -167,6 +167,10 @@ footer {
 
 #output {
 	color: var(--raisin-black);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 #searchForm {
