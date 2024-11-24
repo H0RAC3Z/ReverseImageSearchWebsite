@@ -28,8 +28,6 @@ body {
 	border: 2px var(--seasalt) solid;
 	/* background-color: var(--grayish); */
 	padding: 40px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
 	/* background-color: rgb(243, 222, 138); */
 }
 
@@ -94,13 +92,9 @@ footer {
 	justify-content: center;
 	padding: 40px;
 	border: 2px var(--seasalt) solid;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
 	/* color: var(--cool-gray); */
 	/*background-color: var(--flax);*/
 	margin-top: 30%;
-	display: flex;
-	
 }
 
 .mainPageTxt {
@@ -121,7 +115,6 @@ footer {
 	align-items: center;
 	flex-direction: column;
 	color: var(--seasalt);
-	
 }
 
 .drop-zone {
@@ -135,7 +128,6 @@ footer {
   cursor: pointer;
   background-color: car(--flax);
   color: var(--seasalt);
-  
 }
 .drop-zone--over {
     border-color: var(--coral-pink);
