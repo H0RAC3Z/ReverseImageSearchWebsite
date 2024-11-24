@@ -66,14 +66,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function displayOutput(data) {
-        if(JSON.parse(data)[0].length == 1)
-            outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-        else {
-            data = JSON.parse(data);
-            outputDiv.innerHTML = `<img id="" href="${data.imglink}"><h3>Cheapest Price: ${data.cheapestPrice}</h3><a href="${data.cheapestLink}">${source}</a>`;
+        function isValidJSON(str) {
+            try {
+                JSON.parse(str);
+                return true;
+            } catch (e) {
+                return false;
+            }
         }
+    
+        // Check if the input data is valid JSON
+        if (isValidJSON(data)) {
+            data = JSON.parse(data); // Parse the JSON data
             
-        
+            if (Array.isArray(data) && data[0].length === 1) {
+                outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } else {
+                // Ensure the required fields exist in the parsed data
+                if (data.imglink && data.cheapestPrice && data.cheapestLink) {
+                    outputDiv.innerHTML = `
+                        <img id="" src="${data.imglink}" alt="Product Image">
+                        <h3>Cheapest Price: ${data.cheapestPrice}</h3>
+                        <a href="${data.cheapestLink}">${data.source || "Source"}</a>
+                    `;
+                } else {
+                    outputDiv.innerHTML = `<p>Invalid response data structure.</p>`;
+                }
+            }
+        } else {
+            // Handle non-JSON data (e.g., "Please enter an MPN")
+            outputDiv.innerHTML = `<p>${data}</p>`;
+        }
     }
 
     // Drag-and-drop functionality
