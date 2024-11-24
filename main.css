@@ -110,7 +110,7 @@ footer {
 
 .mainPageTxt {
 	color: var(--seasalt);
-	margin: 20px;
+	margin-left: 20px;
 	font-size: 96px;
 	overflow: hidden; 
 	/* background-image: url(images/abstract.jpg); */
