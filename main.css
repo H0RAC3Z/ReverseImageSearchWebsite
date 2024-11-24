@@ -16,6 +16,7 @@ body {
 	/* background-color: var(--raisin-black); */
 	margin: 0;
 	background-image: url(images/toolBg.png);
+	background-repeat: none;
 }
 
 .navbar {
