@@ -36,13 +36,14 @@ body {
 .navbar a {
 	text-decoration-line: none;
 	font-size: 18px;
+	padding: 20px;
 	transition: border-style 0.5s, border-radius 0.5s, background-color 0.5s;
 	color: var(--seasalt);
 }
 
 .navbar a:hover {
 	border-style: solid;
-	border-radius: 5px;
+	border-radius: 30px;
 	background-color: var(--tinted-black);
 }
 
@@ -78,13 +79,14 @@ body {
 footer div a {
 	text-decoration-line: none;
 	font-size: 18px;
+	padding: 20px;
 	transition: border-style 0.5s, border-radius 0.5s, background-color 0.5s;
 	color: var(--seasalt);
 }
 
 footer div a:hover {
 	border-style: solid;
-	border-radius: 5px;
+	border-radius: 30px;
 	background-color: var(--tinted-black);
 }
 
@@ -175,10 +177,6 @@ footer {
 	justify-content: center;
 	text-align: center;
 	padding: 50px;
-}
-
-footer .footerdiv a:hover {
-    text-decoration: underline;
 }
 
 #fetch-tool2{
