@@ -15,7 +15,7 @@ body {
 	font-family: Times New Roman, Helvetica, sans-serif;
 	/* background-color: var(--raisin-black); */
 	margin: 0;
-	background-color: var(--white);
+	background-color: var(--seasalt);
 }
 
 .navbar {
@@ -52,7 +52,7 @@ body {
 
 .middleSection {
 	background-image: url(images/toolBg.jpg);
-	background-filter: blur();
+	backdrop-filter: blur(5px);
 }
 
 .bottomSection {
