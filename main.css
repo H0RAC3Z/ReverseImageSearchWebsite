@@ -50,6 +50,10 @@ a:hover {
 	align-content: center;
 }
 
+.bottomSection {
+	background-color: var(--seasalt);
+	border-radius: 5px;
+}
 #mpn {
 	border-style: solid;
 	border-radius: 10px;
