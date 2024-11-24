@@ -173,6 +173,11 @@ footer {
 	align-items: center;
 }
 
+#outputImg {
+	width: 75px;
+	height: auto;
+}
+
 #searchForm {
 	display: flex;
 	flex-direction: column;
