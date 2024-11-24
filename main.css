@@ -55,7 +55,6 @@ body {
 
 .bottomSection {
 	background-color: var(--seasalt);
-	border-radius: 5px;
 }
 #mpn {
 	border-style: solid;
@@ -111,9 +110,6 @@ footer {
 	overflow: hidden; 
 	/* background-image: url(images/abstract.jpg); */
 	background-repeat: x;
-
-	
-	
 }
 
 .mainBodyTxt {
@@ -167,7 +163,7 @@ footer {
 }
 
 #output {
-	color: white;
+	color: var(--raisin-black);
 }
 
 #searchForm {
