@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function displayOutput(data) {
+        // Helper function to check if a string is valid JSON
         function isValidJSON(str) {
             try {
                 JSON.parse(str);
@@ -75,29 +76,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     
-        // Check if the input data is valid JSON
+        // Check if data is valid JSON
         if (isValidJSON(data)) {
-            data = JSON.parse(data); // Parse the JSON data
+            const parsedData = JSON.parse(data); // Parse JSON into an object
             
-            if (Array.isArray(data) && data[0].length === 1) {
-                outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            // Ensure the parsed data contains the expected properties
+            if (parsedData.imglink && parsedData.link && parsedData.source) {
+                outputDiv.innerHTML = `
+                    <img src="${parsedData.imglink}" alt="Product Image">
+                    <h3>Cheapest Price: <a href="${parsedData.link}" target="_blank">${parsedData.source}</a></h3>
+                `;
             } else {
-                // Ensure the required fields exist in the parsed data
-                if (data.imglink && data.cheapestPrice && data.cheapestLink) {
-                    outputDiv.innerHTML = `
-                        <img id="" src="${data.imglink}" alt="Product Image">
-                        <h3>Cheapest Price: ${data.cheapestPrice}</h3>
-                        <a href="${data.cheapestLink}">${data.source || "Source"}</a>
-                    `;
-                } else {
-                    outputDiv.innerHTML = `<p>Invalid response data structure.</p>`;
-                }
+                // Handle case where the JSON structure doesn't match expectations
+                outputDiv.innerHTML = `<p>Unexpected data format or missing fields.</p>`;
             }
         } else {
-            // Handle non-JSON data (e.g., "Please enter an MPN")
-            outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            // Handle non-JSON responses (e.g., error messages)
+            outputDiv.innerHTML = `<p>${data}</p>`;
         }
     }
+
 
     // Drag-and-drop functionality
     document.querySelectorAll(".drop-zone").forEach((dropZoneElement) => {
