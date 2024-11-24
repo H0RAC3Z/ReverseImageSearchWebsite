@@ -42,7 +42,7 @@ app1.get('/api/search', async (req, res) => {
     }
 
     const mprprice = tool.MPR_price;
-    const jbprice = tool.JB_Price; // why is this one capital p?
+    const jbprice = tool.JB_price; // why is this one capital p?
     const tenaquipprice = tool.Tenaquip_price;
     const imglink = tool.Image_link;
     const mprlink = tool.MPR_link;
