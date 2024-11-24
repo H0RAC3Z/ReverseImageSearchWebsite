@@ -52,6 +52,7 @@ body {
 
 .middleSection {
 	background-image: url(images/toolBg.jpg);
+	background-repeat: none;
 }
 
 .bottomSection {
