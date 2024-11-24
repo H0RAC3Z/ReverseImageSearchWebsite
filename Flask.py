@@ -63,33 +63,40 @@ def imageSearch(client, image_url):
            
 
 @app.route('/api/imgsearch', methods=['GET'])
-
 def imageSearchAPI():
     image_url = request.args.get('image_url')
     if not image_url:
         return jsonify({"error": "Missing image_url parameter"}), 400
 
     try:
-            client = weaviateInitiate()  # Initialize Weaviate client
-            mpn = imageSearch(client, image_url)  # Get MPN from image search
-        
-        # Format the URL with the dynamic mpn value
-            nodeAPI = f"http://localhost:3000/api/search?MPN={mpn}"
-        
-        # Send data to Node.js API
-            response = requests.get(nodeAPI)  # POST request to Node.js API
-        
-        # Check if response from Node.js is successful
-            if response.status_code == 200:
-            # Return the response data after the Node.js API call
-                return jsonify({"node_response": "connected"})
-            else:
-                return jsonify({"error": "Failed to update Node.js API"}), 500
+        # Initialize Weaviate client
+        client = weaviateInitiate()
 
+        # Perform image search and get MPN
+        mpn = imageSearch(client, image_url)
+
+        # Validate the returned MPN
+        if not mpn:
+            return jsonify({"error": "MPN not found for the given image"}), 404
+
+        # Format the URL with the dynamic MPN value
+        nodeAPI = f"http://localhost:3000/api/search?MPN={mpn}"
+
+        # Send request to Node.js API
+        response = requests.get(nodeAPI)
+
+        # Parse Node.js API response
+        if response.status_code == 200:
+            node_response = response.json()  # Parse JSON if the Node API returns valid JSON
+            return jsonify({"node_response": node_response})
+        elif response.status_code == 404:
+            return jsonify({"error": "Tool not found in Node.js API"}), 404
+        else:
+            return jsonify({"error": f"Node.js API error: {response.status_code}"}), 500
 
     except Exception as e:
-            return jsonify({"error": str(e)}), 500
-    
+        # Handle any unexpected errors
+        return jsonify({"error": f"Internal Server Error: {str(e)}"}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
