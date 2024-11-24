@@ -89,6 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${parsedData.imglink}" alt="Product Image" id="outputImg">
                 <h3>Cheapest Price: </h3><h3><a href="${parsedData.link}" target="_blank">${parsedData.source}</a></h3>
             `;
+            outputDiv.style.border = "thick solid var(--raisin-black)";
+            outputDiv.style.borderRadius = "30px";
         } else {
             outputDiv.innerHTML = `<p>Unexpected data structure or missing fields.</p>`;
             console.log("Parsed Data:", parsedData);
