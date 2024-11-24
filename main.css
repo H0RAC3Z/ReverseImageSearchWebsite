@@ -85,6 +85,32 @@ body {
 	width: auto;
 }
 
+#fetch-tool {
+	color: var(--white);
+	border-style: solid;
+	border-radius: 30px;
+	transition: color 0.8s, bacground-color 0.8s;
+	padding: 10px;
+}
+
+#fetch-tool:hover {
+	color: var(--black);
+	background-color: var(--white);
+}
+
+#fetch-tool2 {
+	color: var(--white);
+	border-style: solid;
+	border-radius: 30px;
+	transition: color 0.8s, bacground-color 0.8s;
+	padding: 10px;
+}
+
+#fetch-tool2:hover {
+	color: var(--black);
+	background-color: var(--white);
+}
+
 footer div a {
 	text-decoration-line: none;
 	font-size: 18px;
