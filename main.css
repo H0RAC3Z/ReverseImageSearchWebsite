@@ -52,6 +52,9 @@ body {
 
 .middleSection {
 	background-image: url(images/toolBg.jpg);
+}
+
+.forBlurring {
 	background-color: rgba(0, 0, 0, 0.4);
   	backdrop-filter: blur(5px);
 }
