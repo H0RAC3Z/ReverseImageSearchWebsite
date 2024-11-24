@@ -2,6 +2,7 @@
 	--white: #ffffff;
 	--black: #000000;
 	--grayish: #ededed;
+	--tinted-black: rgba(0, 0, 0, 0.5);
 
 	--raisin-black: rgb(39, 40, 56);
 	--flax: rgb(243, 222, 138);
@@ -34,14 +35,15 @@ body {
 
 .navbar a {
 	text-decoration-line: none;
-	color: var(--raisin-black);
 	font-size: 18px;
-	transition: color 0.5s;
+	transition: border-style 0.5s, border-radius 0.5s, background-color 0.5s;
 	color: var(--seasalt);
 }
 
-a:hover {
-	color: var(--white);
+.navbar a:hover {
+	border-style: solid;
+	border-radius: 5px;
+	background-color: var(--tinted-black);
 }
 
 .search-container {
@@ -75,11 +77,15 @@ a:hover {
 
 footer div a {
 	text-decoration-line: none;
-	/* color: var(--raisin-black); */
 	font-size: 18px;
-	padding: 40px;
-	transition: color 0.5s;
+	transition: border-style 0.5s, border-radius 0.5s, background-color 0.5s;
 	color: var(--seasalt);
+}
+
+footer div a:hover {
+	border-style: solid;
+	border-radius: 5px;
+	background-color: var(--tinted-black);
 }
 
 footer {
