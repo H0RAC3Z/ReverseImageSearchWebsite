@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             outputDiv.style.border = "thick solid var(--raisin-black)";
             outputDiv.style.borderRadius = "30px";
+            outputDiv.style.padding = "30px";
         } else {
             outputDiv.innerHTML = `<p>Unexpected data structure or missing fields.</p>`;
             console.log("Parsed Data:", parsedData);
