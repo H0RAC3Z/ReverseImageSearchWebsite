@@ -72,7 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 parsedData = JSON.parse(data); // Parse if it's a string
             } catch (error) {
-                outputDiv.innerHTML = `<p>Error parsing JSON: ${error.message}</p>`;
+                alert("Enter a valid MPN.");
+                // outputDiv.innerHTML = `<p>Error parsing JSON: ${error.message}</p>`;
                 return;
             }
         } else if (typeof data === "object") {
