@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayOutput(data) {
         outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-        outputDiv.style.color = var(--raisin-black);
+        outputDiv.style.color = "var(--raisin-black)";
     }
 
     // Drag-and-drop functionality
