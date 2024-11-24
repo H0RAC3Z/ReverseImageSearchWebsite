@@ -66,35 +66,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function displayOutput(data) {
-        // Helper function to check if a string is valid JSON
-        function isValidJSON(str) {
+        // Ensure data is in object form
+        let parsedData;
+        if (typeof data === "string") {
             try {
-                JSON.parse(str);
-                return true;
-            } catch (e) {
-                return false;
+                parsedData = JSON.parse(data); // Parse if it's a string
+            } catch (error) {
+                outputDiv.innerHTML = `<p>Error parsing JSON: ${error.message}</p>`;
+                return;
             }
+        } else if (typeof data === "object") {
+            parsedData = data; // Use directly if it's already an object
+        } else {
+            outputDiv.innerHTML = `<p>Unsupported data type: ${typeof data}</p>`;
+            return;
         }
     
-        // Check if data is valid JSON
-        if (isValidJSON(data)) {
-            const parsedData = JSON.parse(data); // Parse JSON into an object
-            
-            // Ensure the parsed data contains the expected properties
-            if (parsedData.imglink && parsedData.link && parsedData.source) {
-                outputDiv.innerHTML = `
-                    <img src="${parsedData.imglink}" alt="Product Image">
-                    <h3>Cheapest Price: <a href="${parsedData.link}" target="_blank">${parsedData.source}</a></h3>
-                `;
-            } else {
-                // Handle case where the JSON structure doesn't match expectations
-                outputDiv.innerHTML = `<p>Unexpected data format or missing fields.</p>`;
-            }
+        // Check if parsedData contains the expected properties
+        if (parsedData.imglink && parsedData.link && parsedData.source) {
+            outputDiv.innerHTML = `
+                <img src="${parsedData.imglink}" alt="Product Image">
+                <h3>Cheapest Price: <a href="${parsedData.link}" target="_blank">${parsedData.source}</a></h3>
+            `;
         } else {
-            // Handle non-JSON responses (e.g., error messages)
-            outputDiv.innerHTML = `<p>${data}</p>`;
+            outputDiv.innerHTML = `<p>Unexpected data structure or missing fields.</p>`;
+            console.log("Parsed Data:", parsedData);
         }
     }
+
 
 
     // Drag-and-drop functionality
