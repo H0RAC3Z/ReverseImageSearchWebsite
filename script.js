@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else {
             // Handle non-JSON data (e.g., "Please enter an MPN")
-            outputDiv.innerHTML = `<p>${data}</p>`;
+            outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
         }
     }
 
