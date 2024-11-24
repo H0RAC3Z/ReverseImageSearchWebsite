@@ -15,8 +15,7 @@ body {
 	font-family: Times New Roman, Helvetica, sans-serif;
 	/* background-color: var(--raisin-black); */
 	margin: 0;
-	background-image: url(images/toolBg.png);
-	background-repeat: none;
+	background-color: var(--white);
 }
 
 .navbar {
@@ -52,8 +51,7 @@ body {
 }
 
 .middleSection {
-	
-	background-repeat: none;
+	background-image: url(images/toolBg.jpg);
 }
 
 .bottomSection {
