@@ -66,8 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function displayOutput(data) {
-        data = JSON.parse(data);
-        outputDiv.innerHTML = `${data}`;
+        if(JSON.parse(data)[0].length == 1)
+            outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        else {
+            data = JSON.parse(data);
+            outputDiv.innerHTML = `<img id="" href="${data.imglink}"><h3>Cheapest Price: ${data.cheapestPrice}</h3><a href="${data.cheapestLink}">${source}</a>`;
+        }
+            
         
     }
 
