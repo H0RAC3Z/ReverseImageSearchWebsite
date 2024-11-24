@@ -89,7 +89,7 @@ body {
 	color: var(--white);
 	border-style: solid;
 	border-radius: 30px;
-	transition: color 0.8s, bacground-color 0.8s;
+	transition: color 0.8s, background-color 0.8s;
 	padding: 10px;
 }
 
@@ -102,7 +102,7 @@ body {
 	color: var(--white);
 	border-style: solid;
 	border-radius: 30px;
-	transition: color 0.8s, bacground-color 0.8s;
+	transition: color 0.8s, background-color 0.8s;
 	padding: 10px;
 }
 
