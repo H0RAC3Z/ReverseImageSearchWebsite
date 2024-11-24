@@ -51,10 +51,12 @@ body {
 }
 
 .middleSection {
-	background-image: url(images/toolBg.PNG);
+	background-image: url(images/toolBg.jpg);
 }
 
 .bottomSection {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 	background-color: var(--seasalt);
 }
 #mpn {
@@ -94,7 +96,8 @@ footer {
 	display: flex;
 	justify-content: center;
 	padding: 40px;
-	border: 2px var(--seasalt) solid;
+	color: var(--raisin-black);
+	border: 2px var(--raisin-black) solid;
 	/* color: var(--cool-gray); */
 	/*background-color: var(--flax);*/
 	margin-top: 30%;
