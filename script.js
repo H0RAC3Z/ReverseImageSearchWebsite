@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (parsedData.imglink && parsedData.link && parsedData.source) {
             outputDiv.innerHTML = `
                 <img src="${parsedData.imglink}" alt="Product Image" id="outputImg">
-                <h3>Cheapest Price: ${parsedData.price}</h3><h3><a href="${parsedData.link}" target="${parsedData.link}">${parsedData.source}</a></h3>
+                <h3>Cheapest Price: ${parsedData.price}</h3><h3><a href="${parsedData.link}" target="_blank" rel="noopener noreferrer">${parsedData.source}</a></h3>
             `;
             outputDiv.style.border = "thick solid var(--raisin-black)";
             outputDiv.style.borderRadius = "30px";
