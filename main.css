@@ -84,7 +84,7 @@ footer div a {
 	font-size: 18px;
 	padding: 20px;
 	transition: background-color 0.5s;
-	color: var(--seasalt);
+	color: var(--raisin-black);
 }
 
 footer div a:hover {
@@ -116,7 +116,6 @@ footer {
 .mainBodyTxt {
 	margin-top: 90px;
 	margin-bottom: 90px;
-	color: var(--seasalt);
 	padding: 40px;
 	display: flex;
 	align-items: center;
@@ -133,7 +132,6 @@ footer {
   text-align: center;
   transition: border-color 0.3s, background-color 0.3s;
   cursor: pointer;
-  background-color: car(--flax);
   color: var(--seasalt);
 }
 .drop-zone--over {
