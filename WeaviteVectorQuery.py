@@ -20,11 +20,10 @@ URL = os.getenv("WEAVIATE_URL", "https://zmvltylqr3tyk4wje5ba.c0.us-east1.gcp.we
 APIKEY = os.getenv("WEAVIATE_APIKEY", "GvXAlacwwXYYUpya68aUk9bTjwQGHtzRwXPR")
 
 
-# Check if URL and APIKEY are properly retrieved
 if not URL or not APIKEY:
     raise ValueError("Both WEAVIATE_URL and WEAVIATE_APIKEY must be set as environment variables.")
 
-# Connect to Weaviate Cloud
+
 try:
     client = Client(
         url=URL,
@@ -32,7 +31,7 @@ try:
         timeout_config=(10, 10)
     )
 
-    # Check connection
+
     if client.is_ready():
         print("Connection to Weaviate is successful.")
     else:
@@ -40,7 +39,7 @@ try:
 except weaviate.exceptions.WeaviateBaseError as e:
     print(f"Error connecting to Weaviate: {e}")
 
-# Define the class schema
+
 image_class = {
     "class": "ImageSearch",
     "description": "A class to store image data and vectors",
@@ -57,7 +56,7 @@ image_class = {
     }
 }
 
-# Create the class in Weaviate
+
 try:
     client.schema.create_class(image_class)
     print("Class 'ImageSearch' created successfully.")
@@ -90,14 +89,14 @@ imgSources = [
 
 
 
-# Add images and vectors to Weaviate
+
 with client.batch as batch:
     for url in imgSources:
         properties = {"imgsource": url}
         vector = VectorOfImage(url)
         batch.add_data_object(properties, "ImageSearch", vector=vector)
 
-# End timer
+
 t1 = time.time()
 total = t1 - t0
 print(f"Total time taken: {total} seconds")
