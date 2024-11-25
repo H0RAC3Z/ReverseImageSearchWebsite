@@ -11,7 +11,22 @@
 	--seasalt: rgb(249, 248, 248);
 }
 
-/*test.123*/
+/*the code below is from w3schools to change the scroll bar*/
+::-webkit-scrollbar {
+	width:15px;
+}
+/*track is under the part you click and hold on*/
+::-webkit-scrollbar-track {
+	background:#2b3245
+}
+/*the part you click and hold on*/
+::-webkit-scrollbar-thumb {
+	background:rgba(255,255,255,0.1);
+}
+/*hover instance*/
+::-webkit-scrollbar-thumb:hover {
+	background:rgba(255,255,255,0.5);
+}
 
 body {
 	font-family: Times New Roman, Helvetica, sans-serif;
