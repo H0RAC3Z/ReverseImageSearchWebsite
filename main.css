@@ -168,7 +168,7 @@ footer {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	color: var(--seasalt);
+	color: var(--raisin-black);
 }
 
 .drop-zone {
@@ -241,4 +241,22 @@ footer {
 	justify-content: center;
 	text-align: center;
 	padding: 50px;
+}
+
+#urlLabel {
+	color: var(--seasalt);
+}
+
+#urlInput {
+	border-style: solid;
+	border-radius: 10px;
+	height: 20px;
+	width: auto;
+	padding: 10px;
+	transition: box-shadow 0.5s;
+}
+
+#urlInput:focus {
+	box-shadow:0px 0px 10px 3px var(--raisin-black);
+	outline:none;
 }
