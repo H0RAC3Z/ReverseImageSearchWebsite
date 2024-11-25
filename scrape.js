@@ -2,14 +2,14 @@ const puppeteer = require('puppeteer');
 const { MongoClient } = require('mongodb');
 
 async function scrapePrice_mpr(mpr_url) {
-    // Launch the browser
+   
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    // Navigate to the URL
+    
     await page.goto(mpr_url, { waitUntil: 'networkidle2' });
 
-    // Extract the price from the script tag
+  
     const price = await page.evaluate(() => {
 
         const scriptContent = document.querySelector('.\\#price-value').textContent;
@@ -59,7 +59,7 @@ async function scrapePrice_tenaquip(tenaquip_url) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
-  // Set user-agent to simulate human browsing
+  
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36');
 
   const response = await page.goto(tenaquip_url, { waitUntil: 'networkidle2' });
