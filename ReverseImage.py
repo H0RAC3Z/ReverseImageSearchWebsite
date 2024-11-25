@@ -15,17 +15,17 @@ def VectorOfImage(strURL):
     vector = embedding.flatten().tolist()
     return vector
 
-# Retrieve URL and API key from environment variables or use default values
+
 URL = os.getenv("WEAVIATE_URL", "......")
 APIKEY = os.getenv("WEAVIATE_APIKEY", "......")  # Replace 'YOUR_API_KEY_HERE' with your actual API key
 
-# Debugging: Print the values
+
 print(f"WEAVIATE_URL: {URL}")
 print(f"WEAVIATE_APIKEY: {APIKEY}")
 
 
 
-# Connect to Weaviate Cloud
+
 try:
     client = Client(
         url=URL,
@@ -33,7 +33,7 @@ try:
         timeout_config=(10, 10)
     )
 
-    # Check connection
+
     if client.is_ready():
         print("Connection to Weaviate is successful.")
     else:
@@ -41,7 +41,6 @@ try:
 except weaviate.exceptions.WeaviateBaseError as e:
     print(f"Error connecting to Weaviate: {e}")
 
-# Define the updated class schema
 image_class = {
     "class": "ImageSearch",
     "description": "A class to store image data and vectors",
@@ -63,12 +62,12 @@ image_class = {
     }
 }
 
-# Delete the class if it already exists (optional, for testing purposes)
+
 if "ImageSearch" in client.schema.get()['classes']:
     client.schema.delete_class("ImageSearch")
     print("Deleted existing 'ImageSearch' class.")
 
-# Create the class in Weaviate
+
 try:
     client.schema.create_class(image_class)
     print("Class 'ImageSearch' created successfully.")
@@ -80,7 +79,6 @@ except weaviate.exceptions.WeaviateBaseError as e:
 import time
 t0 = time.time()
 
-# Sample data with MPN and image URLs
 data = [
     {
         "mpn": "2967-20",
@@ -159,7 +157,6 @@ with client.batch as batch:
         batch.add_data_object(properties, "ImageSearch", vector=vector)
         print(f"Added {item['mpn']} to Weaviate.")
 
-# End timer
 t1 = time.time()
 total = t1 - t0
 print(f"Total time taken: {total} seconds")
@@ -186,7 +183,7 @@ def imageSearch(image_url):
         print(f"Distance to query: {distance:.3f}\n")
         return mpn, imgsource  # Return the MPN and image link
 
-# Example usage
+
 imgSource = "https://i.ebayimg.com/images/g/hvYAAOSwQatlHbHx/s-l1600.webp"
 t0 = time.time()
 
