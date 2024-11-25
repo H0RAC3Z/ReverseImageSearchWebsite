@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append("url", urlInput);
 
         try {
-            // Fetch the image search result using GET request
+          
             const response = await fetch(`http://localhost:5000/api/imgsearch?image_url=${urlInput}`);
             
-            // Check if the response is OK
+          
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -25,23 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log("Server Response:", data);
 
-            // Display the data in the output div
+         
             displayOutput(data)
 
 
         } catch (error) {
-            console.error("Error:", error); // Log any error
+            console.error("Error:", error); 
             document.getElementById("output").textContent = `Error: ${error.message}`; 
         }
     });
 
-    // MongoDB query handling for tool by MPN
     const fetchToolButton = document.getElementById('fetch-tool');
 
     const mpnInput = document.getElementById('mpn');
     const outputDiv = document.getElementById('output');
 
-    // Event listener for fetching tool by MPN
     fetchToolButton.addEventListener("click", async (event) => {
         event.preventDefault(); // Prevent default form submission
         const mpn = mpnInput.value.trim();
@@ -52,10 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/api/search?MPN=${mpn}`); // Backend endpoint
+            const response = await fetch(`http://localhost:3000/api/search?MPN=${mpn}`); 
             if (response.ok) {
                 const tool = await response.json();
-                displayOutput(tool); // Display tool data
+                displayOutput(tool); 
             } else {
                 displayOutput('Tool not found');
             }
@@ -66,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function displayOutput(data) {
-        // Ensure data is in object form
+       
         let parsedData;
         if (typeof data === "string") {
             try {
-                parsedData = JSON.parse(data); // Parse if it's a string
+                parsedData = JSON.parse(data);
             } catch (error) {
                 alert("Enter a valid MPN.");
                 // outputDiv.innerHTML = `<p>Error parsing JSON: ${error.message}</p>`;
@@ -83,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
     
-        // Check if parsedData contains the expected properties
         if (parsedData.imglink && parsedData.link && parsedData.source) {
             outputDiv.innerHTML = `
                 <img src="${parsedData.imglink}" alt="Product Image" id="outputImg">
@@ -100,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Drag-and-drop functionality
     document.querySelectorAll(".drop-zone").forEach((dropZoneElement) => {
         const inputElement = dropZoneElement.querySelector(".drop-zone__input");
 
