@@ -11,26 +11,26 @@
 	--seasalt: rgb(249, 248, 248);
 }
 
-/*the code below is from w3schools to change the scroll bar*/
+
 ::-webkit-scrollbar {
 	width:15px;
 }
-/*track is under the part you click and hold on*/
+
 ::-webkit-scrollbar-track {
 	background:#2b3245
 }
-/*the part you click and hold on*/
+
 ::-webkit-scrollbar-thumb {
 	background:rgba(255,255,255,0.1);
 }
-/*hover instance*/
+
 ::-webkit-scrollbar-thumb:hover {
 	background:rgba(255,255,255,0.5);
 }
 
 body {
 	font-family: Times New Roman, Helvetica, sans-serif;
-	/* background-color: var(--raisin-black); */
+	
 	margin: 0;
 	background-color: var(--seasalt);
 }
@@ -42,9 +42,9 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	border: 2px var(--seasalt) solid;
-	/* background-color: var(--grayish); */
+	
 	padding: 40px;
-	/* background-color: rgb(243, 222, 138); */
+
 }
 
 .navbar a {
@@ -147,8 +147,6 @@ footer {
 	padding: 40px;
 	color: var(--raisin-black);
 	border: 2px var(--raisin-black) solid;
-	/* color: var(--cool-gray); */
-	/*background-color: var(--flax);*/
 	margin-top: 30%;
 }
 
@@ -157,7 +155,6 @@ footer {
 	margin-left: 20px;
 	font-size: 96px;
 	overflow: hidden; 
-	/* background-image: url(images/abstract.jpg); */
 	background-repeat: x;
 }
 
