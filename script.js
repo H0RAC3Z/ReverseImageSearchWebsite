@@ -13,10 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append("url", urlInput);
 
         try {
-          
             const response = await fetch(`http://localhost:5000/api/imgsearch?image_url=${urlInput}`);
             
-          
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -25,12 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log("Server Response:", data);
 
-         
             displayOutput(data)
 
 
         } catch (error) {
-            console.error("Error:", error); 
+            console.error("Error:", error);
             document.getElementById("output").textContent = `Error: ${error.message}`; 
         }
     });
@@ -41,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const outputDiv = document.getElementById('output');
 
     fetchToolButton.addEventListener("click", async (event) => {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
         const mpn = mpnInput.value.trim();
 
         if (!mpn) {
@@ -50,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/api/search?MPN=${mpn}`); 
+            const response = await fetch(`http://localhost:3000/api/search?MPN=${mpn}`);
             if (response.ok) {
                 const tool = await response.json();
-                displayOutput(tool); 
+                displayOutput(tool);
             } else {
                 displayOutput('Tool not found');
             }
@@ -64,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function displayOutput(data) {
-       
         let parsedData;
         if (typeof data === "string") {
             try {
@@ -75,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
         } else if (typeof data === "object") {
-            parsedData = data; // Use directly if it's already an object
+            parsedData = data; 
         } else {
             outputDiv.innerHTML = `<p>Unsupported data type: ${typeof data}</p>`;
             return;
@@ -84,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (parsedData.imglink && parsedData.link && parsedData.source) {
             outputDiv.innerHTML = `
                 <img src="${parsedData.imglink}" alt="Product Image" id="outputImg">
-                <h3>Cheapest Price: ${parsedData.price}</h3><h3><a href="${parsedData.link}" target="_blank" rel="noopener noreferrer">${parsedData.source}</a></h3>
+                <h3>Cheapest Price: </h3><h3><a href="${parsedData.link}" target="_blank" rel="noopener noreferrer">${parsedData.source}</a></h3>
             `;
             outputDiv.style.border = "thick solid var(--raisin-black)";
             outputDiv.style.borderRadius = "30px";
@@ -94,8 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Parsed Data:", parsedData);
         }
     }
-
-
 
     document.querySelectorAll(".drop-zone").forEach((dropZoneElement) => {
         const inputElement = dropZoneElement.querySelector(".drop-zone__input");

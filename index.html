@@ -3,28 +3,32 @@
 	<head>
 		<title>ToolImageSearch</title>
 		<link rel="stylesheet" href="main.css">
-		<link rel="icon" type="image/x-icon" href="images/search.PNG">
-		<script src="script.js"></script>
+		<link rel="icon" type="image/x-icon" href="images/search.PNG"> <!--adds web icon to top of tab-->
+		<script src="script.js"></script><!--links to the script.js file-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
+		<!--navbar containing everything in the navbar-->
 		<div class="navbar">
-			<a href="index.html"><h1>ToolImageSearch</h1></a>
+			<a href="index.html">
+				<img src="images/rift.png" class="logoYeah">
+			</a>
 			<a href="">Product List</a>
 			<form>
+				<!--entering of MPN-->
 				<input type="text" placeholder="Enter an MPN" name="search" id="mpn">
 				<button type="submit" id="fetch-tool">
 					Search by MPN
 				</button>
 			</form>
 		</div>
-
+		<!--motto + url entering-->
 		<div class="middleSection">
 			<div class="forBlurring">
 				<div class="mainPageTxt">
 					Save money on tools with top-of-the-line price matching
 				</div>
-		
+				<!--url entering-->
 				<form id="searchForm">
 					<div class="search-container">
 						<div class="input-zone">
@@ -40,7 +44,7 @@
 			</div>
 		</div>
 		
-		
+		<!--output is displayed here-->
 		<div class="bottomSection" id="output"></div>
 	
 		
@@ -48,7 +52,6 @@
 			<div class="footerdiv">
 				<a class="footer" href="pages/aboutUs.html"> About us </a>
 				<a class="footer" href="pages/contactUs.html"> Contact us </a>
-				<a class="footer" href="pages/features.html"> Features </a>
 				<a class="footer" href="pages/terms.html"> Terms </a>
 			</div>	
 		</footer>

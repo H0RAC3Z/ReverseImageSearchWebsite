@@ -18,7 +18,6 @@ def weaviateInitiate():
     URL = os.getenv("WEAVIATE_URL", "https://zmvltylqr3tyk4wje5ba.c0.us-east1.gcp.weaviate.cloud")
     APIKEY = os.getenv("WEAVIATE_APIKEY", "GvXAlacwwXYYUpya68aUk9bTjwQGHtzRwXPR") 
 
-      
     print(f"WEAVIATE_URL: {URL}")
     print(f"WEAVIATE_APIKEY: {APIKEY}")
 
@@ -69,31 +68,30 @@ def imageSearchAPI():
         return jsonify({"error": "Missing image_url parameter"}), 400
 
     try:
-
+        
         client = weaviateInitiate()
 
-      
+        
         mpn = imageSearch(client, image_url)
 
-     
+        
         if not mpn:
             return jsonify({"error": "MPN not found for the given image"}), 404
 
-      
+        
         nodeAPI = f"http://localhost:3000/api/search?MPN={mpn}"
 
         response = requests.get(nodeAPI)
 
         if response.status_code == 200:
-            node_response = response.json()  # Parse JSON if the Node API returns valid JSON
-            return jsonify({"node_response": node_response})
+            node_response = response.json()
+            return jsonify(node_response)
         elif response.status_code == 404:
             return jsonify({"error": "Tool not found in Node.js API"}), 404
         else:
             return jsonify({"error": f"Node.js API error: {response.status_code}"}), 500
 
     except Exception as e:
-       
         return jsonify({"error": f"Internal Server Error: {str(e)}"}), 500
 
 if __name__ == '__main__':

@@ -1,4 +1,7 @@
 :root {
+	/*
+		Root file for variables for easy readability
+	*/
 	--white: #ffffff;
 	--black: #000000;
 	--grayish: #ededed;
@@ -11,26 +14,30 @@
 	--seasalt: rgb(249, 248, 248);
 }
 
-
+/*changing the scroll bar*/
 ::-webkit-scrollbar {
 	width:15px;
 }
 
+/*track is under the part you click and hold on*/
 ::-webkit-scrollbar-track {
 	background:#2b3245
 }
 
+/*the part you click and hold on*/
 ::-webkit-scrollbar-thumb {
 	background:rgba(255,255,255,0.1);
 }
 
+/*hover instance*/
 ::-webkit-scrollbar-thumb:hover {
 	background:rgba(255,255,255,0.5);
 }
 
+
 body {
 	font-family: Times New Roman, Helvetica, sans-serif;
-	
+	/* background-color: var(--raisin-black); */
 	margin: 0;
 	background-color: var(--seasalt);
 }
@@ -42,15 +49,15 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	border: 2px var(--seasalt) solid;
-	
-	padding: 40px;
-
+	/* background-color: var(--grayish); */
+	padding: 20px;
+	/* background-color: rgb(243, 222, 138); */
 }
 
 .navbar a {
 	text-decoration-line: none;
 	font-size: 18px;
-	padding: 20px;
+	padding: 10px;
 	transition: background-color 0.5s;
 	color: var(--seasalt);
 }
@@ -81,6 +88,8 @@ body {
 	border-top-left-radius: 10px;
 	background-color: var(--seasalt);
 }
+
+/*below is the mpn input styling*/
 #mpn {
 	border-style: solid;
 	border-radius: 10px;
@@ -95,11 +104,7 @@ body {
 	outline:none;
 }
 
-#searchImg {
-	height: 20px;
-	width: auto;
-}
-
+/*mpn button styling*/
 #fetch-tool {
 	color: var(--white);
 	border-radius: 30px;
@@ -113,6 +118,7 @@ body {
 	background-color: var(--white);
 }
 
+/*URL input styling*/
 #fetch-tool2 {
 	color: var(--white);
 	border-radius: 30px;
@@ -127,6 +133,7 @@ body {
 	background-color: var(--white);
 }
 
+/*footer link styling*/
 footer div a {
 	text-decoration-line: none;
 	font-size: 18px;
@@ -141,23 +148,29 @@ footer div a:hover {
 	background-color: var(--tinted-black);
 }
 
+/*footer styling*/
 footer {
 	display: flex;
 	justify-content: center;
 	padding: 40px;
 	color: var(--raisin-black);
 	border: 2px var(--raisin-black) solid;
+	/* color: var(--cool-gray); */
+	/*background-color: var(--flax);*/
 	margin-top: 30%;
 }
 
+/*main page text in the body*/
 .mainPageTxt {
 	color: var(--seasalt);
 	margin-left: 20px;
 	font-size: 96px;
 	overflow: hidden; 
+	/* background-image: url(images/abstract.jpg); */
 	background-repeat: x;
 }
 
+/*main body text for other pages*/
 .mainBodyTxt {
 	margin-top: 90px;
 	margin-bottom: 90px;
@@ -166,42 +179,6 @@ footer {
 	align-items: center;
 	flex-direction: column;
 	color: var(--raisin-black);
-}
-
-.drop-zone {
-	width: 600px;
-	height: 300px;
-	padding: 25px;
-	border: 2px solid var(--seasalt);
-	border-radius: 5px;
-	text-align: center;
-	transition: border-color 0.3s, background-color 0.3s;
-	cursor: pointer;
-	color: var(--seasalt);
-}
-.drop-zone--over {
-	border-color: var(--coral-pink);
-	background-color: rgba(235, 148, 134, 0.1);
-	
-}
-.drop-zone__prompt {
-	font-weight: bold;
-	color: var(--seasalt);
-}
-.drop-zone__input {
-	display: none;
-	color: var(--seasalt);
-}
-
-.drop-zone__thumb {
-	display: block;
-	margin-top: 15px;
-	width: 100%;
-	height: 100px;
-	background-size: cover;
-	background-position: center;
-	border-radius: 5px;
-	border: 1px solid var(--cool-gray);
 }
 
 #output {
@@ -213,7 +190,7 @@ footer {
 }
 
 #outputImg {
-	width: 75px;
+	width: 500px;
 	height: auto;
 }
 
@@ -256,4 +233,13 @@ footer {
 #urlInput:focus {
 	box-shadow:0px 0px 10px 3px var(--raisin-black);
 	outline:none;
+}
+
+.logoYeah {
+	height: 150px;
+	width: auto;
+	background-color: var(--seasalt);
+	border-radius: 30px;
+	padding: 0;
+	border-style: outset;
 }

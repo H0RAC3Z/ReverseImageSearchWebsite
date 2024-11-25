@@ -15,15 +15,11 @@ def VectorOfImage(strURL):
     vector = embedding.flatten().tolist()
     return vector
 
-
 URL = os.getenv("WEAVIATE_URL", "......")
-APIKEY = os.getenv("WEAVIATE_APIKEY", "......")  # Replace 'YOUR_API_KEY_HERE' with your actual API key
-
+APIKEY = os.getenv("WEAVIATE_APIKEY", "......")
 
 print(f"WEAVIATE_URL: {URL}")
 print(f"WEAVIATE_APIKEY: {APIKEY}")
-
-
 
 
 try:
@@ -32,7 +28,6 @@ try:
         auth_client_secret=AuthApiKey(APIKEY),
         timeout_config=(10, 10)
     )
-
 
     if client.is_ready():
         print("Connection to Weaviate is successful.")
@@ -56,17 +51,15 @@ image_class = {
             "description": "The source URL of the image"
         }
     ],
-    "vectorizer": "none",  # We will add our own vectors
+    "vectorizer": "none", 
     "vectorIndexConfig": {
         "distance": "cosine"
     }
 }
 
-
 if "ImageSearch" in client.schema.get()['classes']:
     client.schema.delete_class("ImageSearch")
     print("Deleted existing 'ImageSearch' class.")
-
 
 try:
     client.schema.create_class(image_class)
@@ -146,7 +139,6 @@ data = [
     }
 ]
 
-# Add images and vectors to Weaviate
 with client.batch as batch:
     for item in data:
         properties = {
@@ -181,8 +173,7 @@ def imageSearch(image_url):
         print(f"MPN: {mpn}")
         print(f"Image URL: {imgsource}")
         print(f"Distance to query: {distance:.3f}\n")
-        return mpn, imgsource  # Return the MPN and image link
-
+        return mpn, imgsource
 
 imgSource = "https://i.ebayimg.com/images/g/hvYAAOSwQatlHbHx/s-l1600.webp"
 t0 = time.time()

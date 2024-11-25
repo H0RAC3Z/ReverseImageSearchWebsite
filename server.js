@@ -16,7 +16,7 @@ app1.use(cors());
 app1.use(express.json());
 
 
-const uri = 'mongodb://localhost:27017';
+const uri = 'mongodb://localhost:27017'; 
 const dbName = 'ToolsDB'; 
 
 let db;
@@ -30,7 +30,7 @@ MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app1.get('/api/search', async (req, res) => {
   const MPN = req.query.MPN;
-  console.log("Received MPN:", MPN); // Debug input
+  console.log("Received MPN:", MPN); 
   if (!MPN) {
     return res.status(400).json({ error: 'MPN query parameter is required' });
   }
@@ -89,8 +89,6 @@ app1.get('/api/search', async (req, res) => {
   }
 });
 
-
-
 app1.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
@@ -107,6 +105,7 @@ app1.get('/script.js', (req, res) => {
 app1.get('/main.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.css'));
 });
+
 
 app1.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
