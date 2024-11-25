@@ -11,13 +11,13 @@ const app2 = express();
 
 const port = 3000;
 
-// Middleware
+
 app1.use(cors());
 app1.use(express.json());
 
-// MongoDB URI and Database Name
-const uri = 'mongodb://localhost:27017'; // Change this to your MongoDB URI
-const dbName = 'ToolsDB'; // Replace with your database name
+
+const uri = 'mongodb://localhost:27017';
+const dbName = 'ToolsDB'; 
 
 let db;
 
@@ -90,7 +90,7 @@ app1.get('/api/search', async (req, res) => {
 });
 
 
-// Start the server
+
 app1.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
@@ -99,7 +99,7 @@ app1.listen(port, () => {
 app1.use('/images', express.static(path.join(__dirname, 'images')));
 app1.use('/pages', express.static(path.join(__dirname, 'pages')));
 
-// Serve individual files
+
 app1.get('/script.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'script.js'));
 });
@@ -108,7 +108,6 @@ app1.get('/main.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.css'));
 });
 
-// Serve the index.html file at root
 app1.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
