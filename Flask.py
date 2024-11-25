@@ -18,7 +18,7 @@ def weaviateInitiate():
     URL = os.getenv("WEAVIATE_URL", "https://zmvltylqr3tyk4wje5ba.c0.us-east1.gcp.weaviate.cloud")
     APIKEY = os.getenv("WEAVIATE_APIKEY", "GvXAlacwwXYYUpya68aUk9bTjwQGHtzRwXPR") 
 
-        # Debugging: Print the values
+      
     print(f"WEAVIATE_URL: {URL}")
     print(f"WEAVIATE_APIKEY: {APIKEY}")
 
@@ -69,23 +69,21 @@ def imageSearchAPI():
         return jsonify({"error": "Missing image_url parameter"}), 400
 
     try:
-        # Initialize Weaviate client
+
         client = weaviateInitiate()
 
-        # Perform image search and get MPN
+      
         mpn = imageSearch(client, image_url)
 
-        # Validate the returned MPN
+     
         if not mpn:
             return jsonify({"error": "MPN not found for the given image"}), 404
 
-        # Format the URL with the dynamic MPN value
+      
         nodeAPI = f"http://localhost:3000/api/search?MPN={mpn}"
 
-        # Send request to Node.js API
         response = requests.get(nodeAPI)
 
-        # Parse Node.js API response
         if response.status_code == 200:
             node_response = response.json()  # Parse JSON if the Node API returns valid JSON
             return jsonify({"node_response": node_response})
@@ -95,7 +93,7 @@ def imageSearchAPI():
             return jsonify({"error": f"Node.js API error: {response.status_code}"}), 500
 
     except Exception as e:
-        # Handle any unexpected errors
+       
         return jsonify({"error": f"Internal Server Error: {str(e)}"}), 500
 
 if __name__ == '__main__':
