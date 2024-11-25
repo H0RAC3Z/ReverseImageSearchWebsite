@@ -15,8 +15,8 @@ CORS(app)
 
 def weaviateInitiate():
 
-    URL = os.getenv("WEAVIATE_URL", "https://zmvltylqr3tyk4wje5ba.c0.us-east1.gcp.weaviate.cloud")
-    APIKEY = os.getenv("WEAVIATE_APIKEY", "GvXAlacwwXYYUpya68aUk9bTjwQGHtzRwXPR") 
+    URL = os.getenv("WEAVIATE_URL", "*******") #insert your own api keys and url
+    APIKEY = os.getenv("WEAVIATE_APIKEY", "********") 
 
     print(f"WEAVIATE_URL: {URL}")
     print(f"WEAVIATE_APIKEY: {APIKEY}")
