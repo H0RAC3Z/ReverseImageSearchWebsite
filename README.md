@@ -7,3 +7,5 @@ The Flask.py is a RESTAPI that takes an inputed image and queries weaviate. Then
 
 To display cheapest price link and img. main.css is linked to index.html and html files in the pages folder to style them. images are located in the images
 folder. 
+
+To run the project, download and enter your own API key from weaviate in the Flask.py file and create a mongodb connection that contains the json files.
